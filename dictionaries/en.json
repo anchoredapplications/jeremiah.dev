@@ -1,0 +1,11 @@
+{
+    "theme": {
+        "toggle": "Toggle theme",
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "home": {
+        "typeHeading": ["I am a creator", "I am a leader", "I am a software engineer."]
+    }
+}
