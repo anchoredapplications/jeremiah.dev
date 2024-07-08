@@ -1,3 +1,4 @@
+import PageSection, { PageSectionVariant } from "@/components/page-section";
 import ThemeToggle from "@/components/theme-toggle";
 import TypeHeading from "@/components/type-heading";
 import { getDictionary } from '@/dictionaries';
@@ -6,13 +7,13 @@ export default function Home() {
   const $t = getDictionary();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="absolute right-5 top-4">
+    <PageSection variant={PageSectionVariant.Primary}>
+      <span className="absolute right-0">
         <ThemeToggle />
-      </div>
-      <div>
+      </span>
+      <div className="w-full h-full flex flex-col justify-center items-center my-64">
         <TypeHeading stack={$t.home.typeHeading}/>
       </div>
-    </main>
+    </PageSection>
   );
 }

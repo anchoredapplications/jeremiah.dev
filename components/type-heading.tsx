@@ -7,18 +7,33 @@ interface ThemeToggleProps {
 
 const TypeHeading: FC<ThemeToggleProps> = ({stack}: ThemeToggleProps) => {
     // the duration in milliseconds
-    const duration = 8000;
+    const duration = 5000;
 
+    // the string that is shared between all the values in the stack
+    let sharedText = ""
+    const minLength = Math.min(...stack.map(i => i.length))
+    for (let x = 0; x < minLength; x++) {
+        const stringToCheck = stack[0].substring(0, x)
+        if (!stack.some(val => {
+            return val.substring(0, x) !== stack[0].substring(0, x)
+        })) {
+            sharedText = stringToCheck
+        }
+    }
+    // the stack without the shared string
+    const newStack = stack.map(val => val.replace(sharedText, ''));
+    
     const [heading, setHeading] = useState<string>("")
     const [complete, setComplete] = useState<boolean>(false)
-    const typeAhead = (index: number) => (index % 2 === 0) ? "" : "_"
+    
+    const typeAhead = (index: number, length: number) => ((index % 2 === 0) || (index === length)) ? "_" : ""
 
     const typeWord = (word: string) => {
         const wordArray = word.split("");
         wordArray.forEach((character, index) => {
             setTimeout(() => { 
-                setHeading(`${wordArray.slice(0, index+1).join("")}${typeAhead(index)}`)
-            }, index * (duration/2)/(wordArray.length+1))
+                setHeading(`${wordArray.slice(0, index+1).join("")}${typeAhead(index, wordArray.length)}`)
+            }, index * 150)
             
             // When you reach the end of the stack, cease typing. 
             if (index === wordArray.length - 1) return;
@@ -29,7 +44,7 @@ const TypeHeading: FC<ThemeToggleProps> = ({stack}: ThemeToggleProps) => {
         const wordArray = word.split("");
         wordArray.forEach((character, index) => {
             setTimeout(() => { 
-                setHeading(`${wordArray.slice(0, wordArray.length-index).join("")}${typeAhead(index)}`)
+                setHeading(`${wordArray.slice(0, wordArray.length-index-1).join("")}${typeAhead(index, wordArray.length)}`)
             }, index * (duration/2)/(wordArray.length+1) + (duration/2))
         })    
     }
@@ -37,14 +52,14 @@ const TypeHeading: FC<ThemeToggleProps> = ({stack}: ThemeToggleProps) => {
     const typeEffect = () => {
         if (complete) return
 
-        stack.forEach((sentence, index) => {
+        newStack.forEach((sentence, index) => {
             setTimeout(() => { 
-                if (index < stack.length) typeWord(sentence)
-                if (index < stack.length - 1) untypeWord(sentence)
+                if (index < newStack.length) typeWord(sentence)
+                if (index < newStack.length - 1) untypeWord(sentence)
             }, index * duration)
 
             // When you reach the end of the stack, cease typing. 
-            if (index === stack.length - 1) return setComplete(true)
+            if (index === newStack.length - 1) return setComplete(true)
         })
 
     }
@@ -52,8 +67,8 @@ const TypeHeading: FC<ThemeToggleProps> = ({stack}: ThemeToggleProps) => {
     useEffect(typeEffect)
 
     const typeHeading = useMemo(() => (
-        <h1>
-            {heading}
+        <h1 className="text-4xl font-serif">
+            {sharedText}{heading}
         </h1>
     ), [heading])
 
