@@ -5,7 +5,37 @@
         "dark": "Dark",
         "system": "System"
     },
+    "menu": {
+        "toggle":"Toggle menu",
+        "heading":"jeremiah.dev",
+        "description":"Links to all sections of the site."
+    },
+    "navigation": [
+        {"id": "home", "heading":"home"},
+        {"id": "career", "heading":"career"},
+        {"id": "academics", "heading":"academics"},
+        {"id": "skills", "heading":"skills"},
+        {"id": "projects", "heading":"projects"}
+    ],
     "home": {
+        "id": "home",
+        "heading":"home",
         "typeHeading": ["I am a creator", "I am a leader", "I am a software engineer."]
+    },
+    "career": {
+        "id": "career",
+        "heading": "career"
+    },
+    "academics": {
+        "id": "academics",
+        "heading": "academics"
+    },
+    "skills": {
+        "id": "skills",
+        "heading": "skills"
+    },
+    "projects": {
+        "id": "projects",
+        "heading": "projects"
     }
 }

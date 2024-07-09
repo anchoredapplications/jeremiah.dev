@@ -6,9 +6,11 @@ import { useTheme } from "next-themes";
 import { getDictionary } from '@/dictionaries';
 import { Toggle } from "./ui/toggle";
 
-interface ThemeToggleProps {}
+interface ThemeToggleProps {
+  className: string;
+}
 
-const ThemeToggle: FC<ThemeToggleProps> = () => {
+const ThemeToggle: FC<ThemeToggleProps> = ({className}: ThemeToggleProps) => {
   const { setTheme, theme } = useTheme();
   const [isPressed, setIsPressed] = useState<boolean>(theme === 'light')
   const $t = getDictionary();
@@ -20,7 +22,7 @@ const ThemeToggle: FC<ThemeToggleProps> = () => {
 
   // Memoized button component
   const toggle = useMemo(() => (
-    <Toggle className="aspect-square" aria-label={$t.theme.toggle} pressed={isPressed} onPressedChange={setChangeTheme}>
+    <Toggle className={`aspect-square ${className}`} aria-label={$t.theme.toggle} pressed={isPressed} onPressedChange={setChangeTheme}>
       { isPressed 
         ? <Moon className="h-[1.2rem] w-[1.2rem]" />
         : <Sun className="h-[1.2rem] w-[1.2rem]" />

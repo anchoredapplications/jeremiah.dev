@@ -2,10 +2,11 @@
 import { FC, useEffect, useState, memo, useMemo } from "react";
 
 interface ThemeToggleProps {
+    className?: string,
     stack: string[]
 }
 
-const TypeHeading: FC<ThemeToggleProps> = ({stack}: ThemeToggleProps) => {
+const TypeHeading: FC<ThemeToggleProps> = ({className, stack}: ThemeToggleProps) => {
     // the duration in milliseconds
     const duration = 5000;
 
@@ -26,7 +27,7 @@ const TypeHeading: FC<ThemeToggleProps> = ({stack}: ThemeToggleProps) => {
     const [heading, setHeading] = useState<string>("")
     const [complete, setComplete] = useState<boolean>(false)
     
-    const typeAhead = (index: number, length: number) => ((index % 2 === 0) || (index === length)) ? "_" : ""
+    const typeAhead = (index: number, length: number) => ((index % 2 === 0) || (index === length)) ? "|" : ""
 
     const typeWord = (word: string) => {
         const wordArray = word.split("");
@@ -45,7 +46,7 @@ const TypeHeading: FC<ThemeToggleProps> = ({stack}: ThemeToggleProps) => {
         wordArray.forEach((character, index) => {
             setTimeout(() => { 
                 setHeading(`${wordArray.slice(0, wordArray.length-index-1).join("")}${typeAhead(index, wordArray.length)}`)
-            }, index * (duration/2)/(wordArray.length+1) + (duration/2))
+            }, index * 150 + (duration/2))
         })    
     }
 
@@ -67,7 +68,7 @@ const TypeHeading: FC<ThemeToggleProps> = ({stack}: ThemeToggleProps) => {
     useEffect(typeEffect)
 
     const typeHeading = useMemo(() => (
-        <h1 className="text-4xl font-serif">
+        <h1 className={`text-4xl font-serif ${className}`}>
             {sharedText}{heading}
         </h1>
     ), [heading])
