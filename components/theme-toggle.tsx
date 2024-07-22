@@ -15,10 +15,10 @@ const ThemeToggle: FC<ThemeToggleProps> = ({className}: ThemeToggleProps) => {
   const [isPressed, setIsPressed] = useState<boolean>(theme === 'light')
   const $t = getDictionary();
 
-  const setChangeTheme = useCallback((isPressed: boolean) => {
-    setIsPressed(isPressed)
-    setTheme(isPressed ? 'light' : 'dark')
-  }, [setTheme]);
+  const setChangeTheme = useCallback((wasPressed: boolean) => {
+    setIsPressed(wasPressed)
+    setTheme(wasPressed ? 'light' : 'dark')
+  }, [setTheme, setIsPressed, theme]);
 
   // Memoized button component
   const toggle = useMemo(() => (
@@ -28,7 +28,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({className}: ThemeToggleProps) => {
         : <Sun className="h-[1.2rem] w-[1.2rem]" />
       }
     </Toggle>
-  ), [isPressed]);
+  ), [isPressed, setChangeTheme, className]);
 
   return (toggle);
 };

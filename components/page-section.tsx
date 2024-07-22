@@ -15,9 +15,9 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id}: PageSectionP
     const getCSSForVariant = (variant: PageSectionVariant) => {
         switch(variant) {
             case PageSectionVariant.Primary:
-                return "backdrop-brightness-100"
+                return "bg-background"
             case PageSectionVariant.Secondary:
-                return "backdrop-brightness-95 dark:backdrop-brightness-90"
+                return "bg-background-secondary"
         }
     }
     // Memoized component

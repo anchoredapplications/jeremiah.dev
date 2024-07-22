@@ -1,9 +1,11 @@
 {
     "theme": {
         "toggle": "Toggle theme",
-        "light": "Light",
-        "dark": "Dark",
-        "system": "System"
+        "light": "light",
+        "dark": "dark",
+        "dev": "developer",
+        "system": "system",
+        "keys": {"light": "light", "dark": "dark", "dev": "dev"}
     },
     "menu": {
         "toggle":"Toggle menu",
