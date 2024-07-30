@@ -24,6 +24,9 @@
         "heading":"home",
         "typeHeading": ["I am a creator", "I am a leader", "I am a software engineer."]
     },
+    "timeline" : {
+        "endDateDefault" : "Present"
+    },
     "career": {
         "id": "career",
         "heading": "career"

@@ -1,4 +1,17 @@
-type Job = {
+export type Job = {
+    title: string, 
+    type: string,
+    employer: string,
+    displayDate: string,
+    duration: string, 
+    startDate: string,
+    endDate: string,
+    location: string,
+    description: React.ReactNode,
+    skills: Skill[]
+}
+
+export type ImportedJob = {
     title: string, 
     type: string,
     employer: string,
@@ -7,6 +20,6 @@ type Job = {
     startDate: Date,
     endDate: Date,
     location: string,
-    description: React.ReactNode | string,
+    description: React.ReactNode,
     skills: Skill[]
 }

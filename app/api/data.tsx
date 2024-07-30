@@ -73,7 +73,7 @@ const experiences = [
         ]
     },
     {
-        employer: "dddd",
+        employer: "Netsmart",
         title: "Software Engineer",
         type: "Full-time",
         startDate: new Date(2020, 6, 1),
@@ -99,7 +99,7 @@ const experiences = [
     },
     {
         employer: "College of the Ozarks",
-        title: "Math and Physics Teacher's Aide",
+        title: "Lab Assistant",
         type: "Part-time",
         startDate: new Date(2017, 8, 1),
         endDate: new Date(2020, 5, 1), 
@@ -114,31 +114,6 @@ const experiences = [
             skills.MatLab,
             skills.Geogabra,
         ]
-    },
-    {
-        employer: "Self-Employed",
-        title: "Private Mathematics Tutoring",
-        type: "Full-time",
-        startDate: new Date(2017, 8, 1),
-        endDate: new Date(2019, 8, 1), 
-        location: "Branson, MO",
-        description: (<ul>
-                <li>Assists high school students in the field of mathematics. Works with the following courses: Algebra I, Trigonometry, Pre-calculus </li>
-                <li>Meets with students weekly, developing needed skills and bringing students to a higher academic understanding </li>
-            </ul>),
-        skills: []
-    },
-    {
-        employer: "Gateway Wireless LLC",
-        title: "Sales Advocate",
-        type: "Full-time",
-        startDate: new Date(2018, 5, 1),
-        endDate: new Date(2018, 8, 1), 
-        location: "Branson, MO",
-        description: (<p>
-            Worked as a sales advocate with Gateway Wireless LLC, a Cricket Wireless authorized retailer. Acted with a team and individually to advocate the Cricket brand and to perform sales. Developed connections through customer interactions to create an integrated sales network. 
-        </p>),
-        skills: []
     }
 ]
 const academia = {

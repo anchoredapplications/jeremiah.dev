@@ -1,15 +1,6 @@
-"use client"
-
-import { getDictionary } from "@/dictionaries"
+import { Job } from "@/types/job"
 import { useTheme } from "next-themes"
-import { FC, ReactNode, memo, useMemo } from "react"
-import DevOnly from "./dev-only"
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
-import { Sparkles } from "lucide-react"
+import { FC, memo, useMemo } from "react"
 
 interface CareerCard {
     job: Job
@@ -19,6 +10,7 @@ const CareerCard: FC<CareerCard> = ({job}: CareerCard) => {
     const {theme} = useTheme()
 
     const component = useMemo(() => (
+        
         <table>
             <tbody>
                 <tr>

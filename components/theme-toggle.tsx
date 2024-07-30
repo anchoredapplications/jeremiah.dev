@@ -1,6 +1,6 @@
 "use client"
 
-import { memo, useMemo, useCallback, FC, useState } from "react"
+import { memo, useMemo, useCallback, FC, useState, useEffect } from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes";
 import { getDictionary } from '@/dictionaries';
@@ -12,8 +12,12 @@ interface ThemeToggleProps {
 
 const ThemeToggle: FC<ThemeToggleProps> = ({className}: ThemeToggleProps) => {
   const { setTheme, theme } = useTheme();
-  const [isPressed, setIsPressed] = useState<boolean>(theme === 'light')
+  const [isPressed, setIsPressed] = useState<boolean>()
   const $t = getDictionary();
+
+  useEffect(() => {
+    setIsPressed(theme === "light")
+  })
 
   const setChangeTheme = useCallback((wasPressed: boolean) => {
     setIsPressed(wasPressed)
@@ -28,7 +32,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({className}: ThemeToggleProps) => {
         : <Sun className="h-[1.2rem] w-[1.2rem]" />
       }
     </Toggle>
-  ), [isPressed, setChangeTheme, className]);
+  ), [isPressed, setChangeTheme, className, Toggle]);
 
   return (toggle);
 };
