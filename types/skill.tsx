@@ -1,6 +1,6 @@
-type Skill = {
-    imagePath: string,
-    heading: string,
-    subtitle: string, 
-    dateEarned: Date
+import { ReactNode } from "react"
+
+export type Skill = {
+    subtitle: string,
+    image: ReactNode
 }

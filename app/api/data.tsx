@@ -52,6 +52,27 @@ const decorations = {
 const experiences = [
     {
         employer: "O'Reilly Technology Services",
+        title: "UI/UX Technical Lead",
+        type: "Full-time",
+        startDate: new Date(2024, 2, 1),
+        //endDate: "", 
+        location: "Remote",
+        description: (<ul>
+            <li>Worked as a UI/UX Technical liaision for the Online Store Team, providing advisement for current and planned front-end efforts</li>
+            <li>Collaberated with fellow leads to guide UI/UX development and adherence to coding best-practices. </li>
+        </ul>),
+        skills: [
+            skills.VueJS,
+            skills.TypeScript,
+            skills.JQuery,
+            skills.GoogleTagManager,
+            skills.Thymeleaf,
+            skills.Docker,
+            skills.HTML5,
+        ]
+    },
+    {
+        employer: "O'Reilly Technology Services",
         title: "UI / UX Developer II",
         type: "Full-time",
         startDate: new Date(2022, 2, 1),
@@ -62,12 +83,11 @@ const experiences = [
             <li>Writes clean, semantic HTML and CSS in conjunction with client-side JavaScript frameworks. </li>
         </ul>),
         skills: [
-            skills.HTML5, 
+            skills.HTML5,
             skills.VueJS,
             skills.TypeScript,
             skills.JQuery,
             skills.GoogleTagManager,
-            skills.JavaScript,
             skills.Thymeleaf,
             skills.Docker,
         ]
@@ -80,8 +100,7 @@ const experiences = [
         endDate: new Date(2022, 2, 1), 
         location: "Springfield, MO",
         description: (<ul>
-                <li>Participates in the software development life cycle including requirement analysis, planning, software design, development, review, testing and deployment.</li>
-                <li>Run software tests, review results and perform root cause analyses to identify problems. </li>
+                <li>Participates in the software development life cycle including requirement analysis, planning, software design, development, review, unit/integration testing, and deployment.</li>
                 <li>Identify, implement and support technical solutions to deliver business requirements</li>
             </ul>),
         skills: [
@@ -91,9 +110,7 @@ const experiences = [
             skills.Telerik,
             skills.DotNetCore,
             skills.GoLang,
-            skills.GoogleTagManager,
             skills.HTML5, 
-            skills.JavaScript,
             skills.JQuery,
         ]
     },

@@ -4,35 +4,35 @@ import { useTheme } from "next-themes"
 import { FC, memo, useMemo } from "react"
 import EventBubble from "./event-bubble"
 import { Job } from "@/types/job"
-import { componentOf } from "../utility/componentOf"
+import { ComponentOf } from "../utility/componentOf"
+import SkillBadgeList from "./skill-badge-list"
 
 interface TimelineItem {
     event: Job
-}
-
-function Description({description}: any) {
-    return (
-        <div className="p-4">
-            {componentOf(description, "list-disc")}
-        </div>
-    )
 }
 
 const TimelineItem: FC<TimelineItem> = ({event}: TimelineItem) => {
     const {theme} = useTheme()
     const heading = `${event.startDate} - ${event.endDate}`
     const subheading = event.duration
-    
 
     const component = useMemo(() => (
-        <li className="w-full flex flex-col items-center gap-4 p-4">
+        <li className="w-full h-full flex flex-col items-center gap-4 p-8">
             <EventBubble heading={heading} subheading={subheading} />
-            <div className="w-full h-full shadow-xl bg-card p-4 rounded-xl m-4">
-                <h1 className="text-2xl">{event.title}</h1>
-                <h2 className="text-xl">{event.employer}</h2>
-                <h3 className="text-xl font-light">{event.location}</h3>
-                <hr className="py-4"></hr>
-                <Description description={event.description}/>
+            <div className="w-full h-full shadow-xl bg-card p-4 rounded-xl m-4 flex flex-col justify-between">
+                <div className="flex flex-col">
+                    <h1 className="text-2xl tracking-tighter">{event.title}</h1>
+                    <h2 className="text-lg tracking-tighter">{event.employer}</h2>
+                    <h3 className="text-lg font-light">{event.location}</h3>
+                    <hr className="mt-4"></hr>
+                    <div className="p-2 h-">
+                        <ComponentOf jsx={event.description} style="list-disc"/>
+                    </div>
+                </div>
+                <div className="flex flex-col">
+                    <hr className="mb-4"></hr>
+                    <SkillBadgeList skills={event.skills}/>
+                </div>
             </div>
         </li>
     ), [theme])

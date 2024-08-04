@@ -1,14 +1,26 @@
-import { ReactElement, createElement } from "react"
 
-export function componentOf(el: ReactElement, style: string): JSX.Element {
+import { cn } from "@/lib/utils"
+import { ReactElement, createElement, JSX, ReactNode } from "react"
+
+export function ComponentOf({jsx, style}: {jsx: any, style?: string}) {
+  return componentOfElement(jsx, style)
+}
+
+export function componentOfElement(el: ReactElement, style?: string): JSX.Element | ReactNode {
   const hasChildren = el?.props?.children
   const hasChildrenArray = hasChildren && Array.isArray(hasChildren)
 
-  if (!el?.type) return <></>
+  if (!el?.type) return `${el}`
 
   const children = hasChildrenArray 
-      ? el.props.children.map(componentOf, style) 
-      : el.props.children 
+      ? el.props.children.map((child: any) => componentOfElement(child, style)) 
+      : componentOfElement(el.props.children, style)
 
-  return createElement(el.type, { key:`${el.type}${el.props.children.length}`, className: style }, children)
+  const component = createElement(
+    el.type, 
+    { ...el.props, key:`${el.type}-${el.key}`, className: cn(el.props.className, style) }, 
+    children
+  )
+
+  return component
 }
