@@ -76,6 +76,7 @@ const experiences = [
         title: "UI / UX Developer II",
         type: "Full-time",
         startDate: new Date(2022, 2, 1),
+        endDate: new Date(2024, 2, 1), 
         //endDate: "", 
         location: "Remote",
         description: (<ul>
