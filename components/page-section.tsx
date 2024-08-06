@@ -22,7 +22,7 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id}: PageSectionP
     }
     // Memoized component
     const section = useMemo(() => (
-        <section id={id} className={`w-full min-h-screen ${getCSSForVariant(variant)}`}>
+        <section id={id} className={`w-full flex flex-col h-full min-h-screen ${getCSSForVariant(variant)}`}>
             {children}
         </section>
     ), [children, variant]);

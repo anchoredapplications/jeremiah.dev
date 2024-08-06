@@ -3,24 +3,31 @@ import { cn } from "@/lib/utils"
 import { ReactElement, createElement, JSX, ReactNode } from "react"
 
 export function ComponentOf({jsx, style}: {jsx: any, style?: string}) {
-  return componentOfElement(jsx, style)
+  let index = 0;
+  return componentOfElement(jsx, style, index)
 }
 
-export function componentOfElement(el: ReactElement, style?: string): JSX.Element | ReactNode {
+export function componentOfElement(el: ReactElement, style?: string, index?: number): JSX.Element | ReactNode {
   const hasChildren = el?.props?.children
   const hasChildrenArray = hasChildren && Array.isArray(hasChildren)
 
   if (!el?.type) return `${el}`
 
+  let n = index ?? 0;
   const children = hasChildrenArray 
-      ? el.props.children.map((child: any) => componentOfElement(child, style)) 
-      : componentOfElement(el.props.children, style)
+      ? el.props.children.map((child: any) => componentOfElement(child, style, ++n)) 
+      : componentOfElement(el.props.children, style, ++n)
 
-  const component = createElement(
-    el.type, 
-    { ...el.props, key:`${el.type}-${el.key}`, className: cn(el.props.className, style) }, 
-    children
-  )
-
-  return component
+  if (hasChildren) {
+    return createElement(
+      el.type, 
+      { ...el.props, key:`${el.type}-${n}`, className: cn(el.props.className, style) }, 
+      children
+    )
+  } else {
+    return createElement(
+      el.type, 
+      { ...el.props, key:`${el.type}-${n}`, className: cn(el.props.className, style) }
+    )
+  }
 }

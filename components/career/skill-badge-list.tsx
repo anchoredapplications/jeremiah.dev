@@ -12,8 +12,8 @@ const SkillBadgeList: FC<SkillBadgeListProps> = ({ skills }: SkillBadgeListProps
 
     const component = useMemo(() => {
         return (<div className="flex flex-wrap gap-2">
-            { skills.map((skill) => (
-                <SkillBadge skill={skill} />
+            { skills.map((skill, index) => (
+                <SkillBadge key={`${skill.subtitle}-${index}`} skill={skill} />
             ))}
         </div>)
     }, [theme, skills])
