@@ -11,8 +11,6 @@ interface Timeline {
 }
 
 const Timeline: FC<Timeline> = ({events}: Timeline) => {
-    const {theme} = useTheme()
-
     const component = useMemo(() => (
         <Carousel opts={{
             align: "start",
@@ -28,7 +26,7 @@ const Timeline: FC<Timeline> = ({events}: Timeline) => {
                 ))}
             </CarouselContent>
         </Carousel>
-    ), [theme, events])
+    ), [events])
 
     return component
 }

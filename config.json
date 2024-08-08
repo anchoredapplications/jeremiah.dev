@@ -1,7 +1,8 @@
 {
     "api": {
         "me": {
-            "career" : "http://localhost:3000/api/me/experience"
+            "career" : "http://localhost:3000/api/me/experience",
+            "academics" : "http://localhost:3000/api/me/academia"
         }
     },
     "linkedIn": {

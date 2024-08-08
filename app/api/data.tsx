@@ -146,7 +146,7 @@ const academia = {
     location: "Point Lookout, Missouri",
     startDate: new Date(2015, 8),
     endDate: new Date(2020, 5),
-    skills: [
+    commendations: [
         decorations.MajorFieldExam,
         decorations.MathAndPhysicsClubPresident,
         decorations.SigmaZetaPresident,

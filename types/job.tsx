@@ -1,3 +1,5 @@
+import { Skill } from "./skill"
+
 export type Job = {
     title: string, 
     type: string,
