@@ -136,12 +136,22 @@ const experiences = [
 ]
 const academia = {
     degree: "Bachelor's Degree",
-    majors: ["Mathematics & Computer Science"],
-    description: (<ul>
-            <li>Received a liberal arts degree. Has proficiency in the arts, including expressing oneself orally and through composition.</li>
+    focuses: [{
+        type: "Major",
+        name: "Computer Science",
+        gpa: "3.90",
+        description: (<ul>
             <li>Earned a major in Computer Science. Has a vast experience with computer systems and programming with both higher-level and lower-level languages.</li>
+        </ul>)
+    },{
+        type: "Major",
+        name: "General Mathematics",
+        gpa: "3.91",
+        description: (<ul>
             <li>Acquired a second major in Mathematics. Has the ability to solve complex problems through computational analysis, including but not limited to problems involving: Trigonometry, Calculus, Number Theory, Physics, and Statistics.</li>
-        </ul>),
+        </ul>)
+    }],
+    description: (<li>Received a liberal arts degree. Has proficiency in the arts, including expressing oneself orally and through composition.</li>),
     institution: "College of the Ozarks",
     location: "Point Lookout, Missouri",
     startDate: new Date(2015, 8),

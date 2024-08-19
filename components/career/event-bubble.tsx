@@ -14,7 +14,7 @@ const EventBubble: FC<EventBubble> = ({heading, subheading, showLeftArrow, showR
     const component = useMemo(() => (
         <span className="flex items-center justify-center">
             { showLeftArrow && <ChevronLeft className="sm:hidden"/> }
-            <button className="rounded-full bg-green-900/30 p-2">
+            <button className="rounded-full bg-lime-400/80 px-4 py-2">
                 <h3>{heading}</h3>
                 <h4>{subheading}</h4>
             </button>

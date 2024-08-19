@@ -1,9 +1,10 @@
 import { ReactNode } from "react"
 import { Commendation } from "./commendation"
+import { Focus } from "./focus"
 
 export type Academics = {
     degree: string,
-    majors: string[],
+    focuses: Focus[],
     description: ReactNode,
     institution: string,
     location: string,

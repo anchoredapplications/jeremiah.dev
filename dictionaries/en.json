@@ -33,7 +33,10 @@
     },
     "academics": {
         "id": "academics",
-        "heading": "academics"
+        "heading": "academics",
+        "focus": {
+            "gpaLabel": "GPA: "
+        }
     },
     "skills": {
         "id": "skills",

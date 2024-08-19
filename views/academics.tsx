@@ -5,6 +5,7 @@ import PageSectionContent from "@/components/page-section-content";
 import PageSectionHeader from "@/components/page-section-header";
 import { getDictionary } from '@/dictionaries';
 import { Academics } from "@/types/academics";
+import FocusList from '@/components/academics/focus-list';
 
 async function getAcademicData() {
   const res = await fetch(config.api.me.academics)
@@ -20,14 +21,8 @@ export default async function Academics() {
     <PageSection id={$t.academics.id} variant={PageSectionVariant.Primary}>
       <PageSectionHeader>{$t.academics.heading}</PageSectionHeader>
       <PageSectionContent>
-        <div>
-          <div>
-            {/* Acadamia */}
-          </div>
-          <div>
-            {/* Photo of some kind */}
-          </div>
-        </div>
+        <h1 className='text-2xl'>{academics.degree}</h1>
+        <FocusList focuses={academics.focuses} />
         <CommendationList commendations={academics.commendations || []} />
       </PageSectionContent>
     </PageSection>
