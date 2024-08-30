@@ -1,6 +1,8 @@
+import { parseAcademia } from '@/server/parseAcademics';
 import { NextResponse } from 'next/server'
 const { academia } = require("../../data");
 
 export async function GET(request: Request) { 
-  return NextResponse.json(academia)
+  const academics = parseAcademia(academia) 
+  return NextResponse.json(academics)
 }

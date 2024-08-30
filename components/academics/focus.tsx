@@ -4,21 +4,23 @@ import { Focus as FocusType} from "@/types/focus"
 import { getDictionary } from "@/dictionaries"
 
 interface FocusProps {
-    focus: FocusType
+    focus: FocusType,
+    isFirst?: boolean,
+    isLast?: boolean
 }
 
-const Focus: FC<FocusProps> = ({ focus }: FocusProps) => {
+const Focus: FC<FocusProps> = ({ focus, isFirst, isLast }: FocusProps) => {
     const $t = getDictionary();
 
     const component = useMemo(() => (
-        <div className="flex flex-col w-full">
-            <h4 className="font-bold">    
-                {focus.type} <span className="font-light">({$t.academics.focus.gpaLabel}{focus.gpa})</span>
-            </h4>
-            <h5 className="font-light">    
+        <div className={`flex flex-col w-full m-4 text-center ${isFirst && 'sm:text-right'} ${isLast && 'sm:text-left'}`}>
+            <h4 className={"font-bold text-xl"}>    
                 {focus.name}
+            </h4>
+            <h5 className="font-light text-xl">
+                {$t.academics.focus.gpaLabel}{focus.gpa}
             </h5>
-            <ComponentOf jsx={focus.description} />
+            <ComponentOf jsx={focus.description} style="flex flex-col text-lg gap-4"/>
         </div>
     ), [])
 

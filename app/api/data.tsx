@@ -140,16 +140,26 @@ const academia = {
         type: "Major",
         name: "Computer Science",
         gpa: "3.90",
-        description: (<ul>
-            <li>Earned a major in Computer Science. Has a vast experience with computer systems and programming with both higher-level and lower-level languages.</li>
-        </ul>)
+        description: (<div>
+                <p>
+                    My Computer Science major provided a strong foundation in theoretical concepts, including algorithms, data structures, and system design. These courses enhanced my understanding of software and hardware interactions and deepened my ability to grasp complex system architectures.
+                </p>
+                <p>
+                    Through my studies, I developed a keen ability to learn and adapt to new technologies. This theoretical knowledge has been crucial in my five years of professional experience, where it continues to inform my approach to problem-solving and innovation in the tech industry.
+                </p>
+            </div>) 
     },{
         type: "Major",
         name: "General Mathematics",
         gpa: "3.91",
-        description: (<ul>
-            <li>Acquired a second major in Mathematics. Has the ability to solve complex problems through computational analysis, including but not limited to problems involving: Trigonometry, Calculus, Number Theory, Physics, and Statistics.</li>
-        </ul>)
+        description: (<div>
+            <p>
+                In my General Mathematics major, I explored a range of mathematical topics, developing a solid understanding of both theoretical and applied mathematics. I served as a teacher’s aide and tutor, which reinforced my problem-solving skills and ability to communicate complex ideas.
+            </p>
+            <p>
+                This major taught me to approach challenges with both abstract and practical thinking. I was honored with the Mathematics Achievement Award for my excellence in upper-division courses and creativity in problem-solving.
+            </p>      
+        </div>)
     }],
     description: (<li>Received a liberal arts degree. Has proficiency in the arts, including expressing oneself orally and through composition.</li>),
     institution: "College of the Ozarks",
