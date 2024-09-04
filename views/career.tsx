@@ -1,10 +1,11 @@
-import PageSection, { PageSectionVariant } from "@/components/page-section";
-import PageSectionHeader from "@/components/page-section-header";
+import PageSection from "@/components/page-section";
+import { PageSectionVariant } from '@/types/PageVariant';
 import { getDictionary } from '@/dictionaries';
 import config from '@/config.json'
 import Timeline from "@/components/career/timeline";
 import { Job } from "@/types/job";
 import PageSectionContent from "@/components/page-section-content";
+import PageSectionHeader from "@/components/page-section-header";
 
 async function getCareerData() {
   const res = await fetch(config.api.me.career)
@@ -17,7 +18,7 @@ export default async function Career() {
   const $t = getDictionary();
 
   return (
-    <PageSection id={$t.career.id} variant={PageSectionVariant.Secondary}>
+    <PageSection id={$t.career.id} variant={PageSectionVariant.Secondary} showBorder={true}>
       <PageSectionHeader>{$t.career.heading}</PageSectionHeader>
       <PageSectionContent>
         <Timeline events={jobs}></Timeline>

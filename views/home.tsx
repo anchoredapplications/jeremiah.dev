@@ -1,4 +1,5 @@
-import PageSection, { PageSectionVariant } from "@/components/page-section";
+import PageSection from "@/components/page-section";
+import { PageSectionVariant } from '@/types/PageVariant';
 import TypeHeading from "@/components/type-heading";
 import { getDictionary } from '@/dictionaries';
 import DevNote from "@/components/dev-note";

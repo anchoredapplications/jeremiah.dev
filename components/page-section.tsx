@@ -1,10 +1,8 @@
-import { CircuitBorder } from "@/app/images/SVGs";
+"use client"
+import { CircuitBorder, CircuitBorder2 } from "@/app/images/SVGs";
+import { PageSectionVariant } from "@/types/PageVariant";
+import { useTheme } from "next-themes";
 import { memo, useMemo, FC, ReactNode } from "react"
-
-export enum PageSectionVariant {
-    Primary="PRIMARY",
-    Secondary="secondary",
-}
 
 export interface PageSectionProps {
     children?: ReactNode | ReactNode[]
@@ -14,6 +12,8 @@ export interface PageSectionProps {
 }
 
 const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: PageSectionProps) => {
+    const { theme } = useTheme()
+
     const getCSSForVariant = (variant: PageSectionVariant) => {
         switch(variant) {
             case PageSectionVariant.Primary:
@@ -23,16 +23,33 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: 
         }
     }
 
-    const border = useMemo(() => (
-        <div className="">
-            <div className='absolute top-0 left-0 z-0 opacity-20'>
-                <CircuitBorder/>
+    const getBorderCSSForVariant = (variant: PageSectionVariant) => {
+        switch(variant) {
+            case PageSectionVariant.Primary:
+                return "color-inlay"
+            case PageSectionVariant.Secondary:
+                return "color-inlay-secondary"
+        }
+    }
+
+    const border = useMemo(() => {
+        const baseCSS = 'absolute z-0 opacity-20'
+        const color = theme === 'light' ? "#000000" : "#FFFFFF" 
+        const random = Math.random() < 0.5
+        return (
+            <div className="">
+                <div className={`${baseCSS} ${getBorderCSSForVariant(variant)} top-0 left-0 ${random ? "-rotate-180" : "rotate-90"}`}>
+                    <CircuitBorder color={color}/>
+                </div>
+                <div className={`${baseCSS} ${getBorderCSSForVariant(variant)} bottom-0 left-0 ${random ? "rotate-90" : ""}`}>
+                    <CircuitBorder2 color={color}/>
+                </div>
+                <div className={`${baseCSS} ${getBorderCSSForVariant(variant)} bottom-0 right-0 ${random ? "" : "-rotate-90"}`}>
+                    <CircuitBorder color={color}/>
+                </div>
             </div>
-            <div className='absolute bottom-0 left-0 z-0 opacity-20 -rotate-90'>
-                <CircuitBorder/>
-            </div>
-        </div>
-    ), []);
+        )
+    }, [variant]);
 
     // Memoized component
     const section = useMemo(() => (

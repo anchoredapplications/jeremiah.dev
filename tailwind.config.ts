@@ -34,6 +34,10 @@ const config = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        inlay: {
+          DEFAULT: "hsl(var(--inlay))",
+          secondary: "hsl(var(--inlay-secondary))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",

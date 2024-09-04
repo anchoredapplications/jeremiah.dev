@@ -1,6 +1,7 @@
 import config from '@/config.json'
 import CommendationList from "@/components/academics/commendation-list";
-import PageSection, { PageSectionVariant } from "@/components/page-section";
+import PageSection from "@/components/page-section";
+import { PageSectionVariant } from '@/types/PageVariant';
 import PageSectionContent from "@/components/page-section-content";
 import PageSectionHeader from "@/components/page-section-header";
 import { getDictionary } from '@/dictionaries';
