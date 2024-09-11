@@ -20,10 +20,13 @@ const TimelineItem: FC<TimelineItem> = ({event, firstItem, lastItem}: TimelineIt
 
     const component = useMemo(() => (
         <li className="w-full h-full flex flex-col items-center gap-4 p-8">
-            <EventBubble heading={heading} subheading={subheading} showLeftArrow={!firstItem} showRightArrow={!lastItem} />
+            {/* <EventBubble heading={heading} subheading={subheading} showLeftArrow={!firstItem} showRightArrow={!lastItem} /> */}
             <div className="w-full h-full shadow-xl bg-card p-4 rounded-xl m-4 flex flex-col justify-between">
                 <div className="flex flex-col">
-                    <h1 className="text-2xl tracking-tighter">{event.title}</h1>
+                    <span className="flex justify-between w-full items-center">
+                        <h1 className="text-2xl tracking-tighter">{event.title}</h1>
+                        <h2>{event.duration}</h2>
+                    </span>
                     <h2 className="text-lg tracking-tighter">{event.employer}</h2>
                     <h3 className="text-lg font-light">{event.location}</h3>
                     <hr className="mt-4"></hr>

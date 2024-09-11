@@ -18,7 +18,7 @@ export default async function Career() {
   const $t = getDictionary();
 
   return (
-    <PageSection id={$t.career.id} variant={PageSectionVariant.Secondary} showBorder={true}>
+    <PageSection id={$t.career.id} variant={PageSectionVariant.Secondary}>
       <PageSectionHeader>{$t.career.heading}</PageSectionHeader>
       <PageSectionContent>
         <Timeline events={jobs}></Timeline>

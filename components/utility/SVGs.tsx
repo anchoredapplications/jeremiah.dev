@@ -1,4 +1,4 @@
-function Anchor({color}: { color: string }) {
+export const Anchor = ({color}: { color: string }) => {
     const strokeWidth = 25
     return (
         <div className="App">
@@ -13,7 +13,7 @@ function Anchor({color}: { color: string }) {
     );
 }
 
-function Close() {
+export const Close = () => {
     return (
         <svg id="epqWjPi76bx1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
             <line x1="-140.169332" y1="-140.169332" x2="140.169333" y2="140.169332" transform="matrix(.929529 0 0 0.892617 150.235184 150.047037)" fill="none" stroke="#000" strokeWidth="40" strokeLinecap="round"/>
@@ -22,7 +22,7 @@ function Close() {
     );
 }
 
-function CircleMeter() {
+export const CircleMeter = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
             <defs>
@@ -36,7 +36,7 @@ function CircleMeter() {
     );
 }
 
-function Telerik() {
+export const Telerik = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="esALaonKU7E1" viewBox="0 0 400.4 400.3" shapeRendering="geometricPrecision" textRendering="geometricPrecision" height="100px" width="100px">
             
@@ -49,7 +49,7 @@ function Telerik() {
     );
 }
 
-function TypeScript() {
+export const TypeScript = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" height="100px" width="100px">
             <rect fill="#3178c6" height="512" rx="50" width="512"/>
@@ -59,7 +59,7 @@ function TypeScript() {
     );
 }
 
-function HTML5() {
+export const HTML5 = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="100px" width="100px">
             <title>HTML5 Logo</title>
@@ -72,7 +72,7 @@ function HTML5() {
     );
 }
 
-function JavaScript() {
+export const JavaScript = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630" height="100px" width="100px">
             <rect width="630" height="630" fill="#f7df1e"/>
@@ -81,7 +81,7 @@ function JavaScript() {
     );
 }
 
-function DotNetCore() {
+export const DotNetCore = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" height="100px" width="100px">
             <circle fill="#5c2d91" cx="32" cy="32" r="32"/>
@@ -98,7 +98,7 @@ function DotNetCore() {
     );
 }
 
-function DynamoDB() {
+export const DynamoDB = () => {
     return (
         <svg viewBox="0 0 256 289" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="100" height="100" >
             
@@ -116,7 +116,7 @@ function DynamoDB() {
     );
 }
 
-function React() {
+export const React = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" height="100px" width="100px">
             <title>React Logo</title>
@@ -131,7 +131,7 @@ function React() {
     );
 }
 
-function Vue() {
+export const Vue = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.76 226.69" height="100px" width="100px">
             
@@ -150,7 +150,7 @@ function Vue() {
 }
 
 
-function GoogleTagManager() {
+export const GoogleTagManager = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2469.7 2469.8" xmlSpace="preserve" height="100px" width="100px">
             
@@ -165,7 +165,7 @@ function GoogleTagManager() {
 }
 
 
-function JQuery() {
+export const JQuery = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.000000 400.000000" preserveAspectRatio="xMidYMid meet" height="100px" width="100px">
             
@@ -179,7 +179,7 @@ function JQuery() {
 }
 
 
-function LaTeX() {
+export const LaTeX = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.000000 243.000000" preserveAspectRatio="xMidYMid meet" height="100px" width="100px">
             
@@ -191,7 +191,7 @@ function LaTeX() {
 }
 
 
-function Mathematica() {
+export const Mathematica = () => {
     return (
         <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xmlSpace="preserve">
             
@@ -202,7 +202,7 @@ function Mathematica() {
     );
 }
 
-function PSPP() {
+export const PSPP = () => {
     return (
         <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 726 718">
             <path d="M 722.493 276.500 C 722.493 428.850, 722.609 491.026, 722.750 414.669 C 722.891 338.312, 722.891 213.662, 722.750 137.669 C 722.609 61.676, 722.493 124.150, 722.493 276.500 M 75.748 1.747 L 151.997 2.012 152.251 285.256 L 152.505 568.500 152.503 285 L 152.500 1.500 76 1.491 L -0.500 1.481 75.748 1.747 M 458.028 55.245 L 458.057 106.500 544.723 164.211 L 631.388 221.922 636.656 212.915 C 653.226 184.577, 663.195 150.885, 664.593 118.500 L 665.198 104.500 663.118 84.718 L 661.038 64.935 654.917 45.218 L 648.795 25.500 642.992 15 L 637.189 4.500 547.595 4.245 L 458 3.989 458.028 55.245 M 644 4.738 C 643.999 5.157, 660.199 5.376, 680 5.226 L 716 4.951 716 275.474 L 716 545.996 444.750 546.250 L 173.500 546.504 445.252 546.752 L 717.004 547 716.752 275.750 L 716.500 4.500 680.250 4.238 C 660.313 4.093, 644 4.318, 644 4.738 M 372.265 366.478 C 354.668 371.430, 343.834 383.265, 340.823 400.827 L 339.622 407.827 340.855 414.518 C 344.396 433.736, 351.389 439.831, 381.660 450.082 C 411.829 460.299, 419.999 467.478, 421.657 485.225 L 422.243 491.503 420.602 498.002 C 411.449 534.249, 355.808 533.475, 348.547 497 C 348.164 495.075, 347.629 492.712, 347.358 491.750 L 346.865 490 340.933 490 L 335 490 335.012 491.750 C 335.159 513.372, 356.266 533.068, 381 534.664 L 389.500 535.213 396.397 533.587 C 420.057 528.008, 434.195 508.936, 432.754 484.540 C 431.399 461.590, 421.479 451.946, 387.872 440.906 C 367.795 434.310, 361.905 431.364, 357.651 425.787 C 348.712 414.068, 350.279 394.816, 361.048 384.048 C 364.221 380.874, 367.869 378.445, 371.499 377.086 L 377.075 375 384 375 C 400.150 375, 412.052 384.379, 416.043 400.250 L 417.237 405 423.131 405 L 429.024 405 428.373 400.750 C 425.138 379.639, 409.520 366.458, 386.500 365.413 L 377.500 365.005 372.265 366.478 M 211 449.908 L 211 532 216.500 532 L 222 532 222 499.155 L 222 466.310 223.829 464.655 L 225.657 463 248.579 462.992 C 293.153 462.978, 307.853 456.405, 314.990 433.296 L 317 426.789 317 416.605 C 317 390.737, 307.227 377.095, 284.169 370.775 L 276.500 368.673 243.750 368.244 L 211 367.815 211 449.908 M 462 449.908 L 462 532 467.500 532 L 473 532 473 499.155 L 473 466.310 474.829 464.655 L 476.657 463 500.079 462.965 L 523.500 462.930 531.500 461.513 C 536.605 460.609, 542.199 458.722, 546.957 456.298 L 554.413 452.500 558.600 447.344 C 560.902 444.508, 563.793 439.558, 565.024 436.344 L 567.261 430.500 567.761 420.254 C 569.105 392.744, 558.963 377.285, 535.325 370.814 L 527.500 368.673 494.750 368.244 L 462 367.815 462 449.908 M 598 449.909 L 598 532 603.500 532 L 609 532 609 499.155 L 609 466.310 610.829 464.655 L 612.657 463 635.698 463 L 658.738 463 667.484 461.475 C 683.689 458.649, 693.474 451.978, 699.445 439.685 L 702.936 432.500 704.018 424.230 L 705.101 415.960 704.095 408.730 C 701.134 387.453, 691.266 376.048, 671 370.481 L 664.500 368.696 631.250 368.257 L 598 367.817 598 449.909 M 223.750 378.691 L 222 380.657 222 415.674 L 222 450.690 223.829 452.345 L 225.657 454 244.079 453.992 C 283.157 453.974, 295.219 449.813, 302.574 433.808 L 305.473 427.500 305.486 416.500 L 305.500 405.500 303.692 400.318 C 302.698 397.468, 300.337 393.110, 298.446 390.632 L 295.007 386.129 288.753 383.092 C 280.422 379.046, 273.607 378.098, 247.500 377.353 L 225.500 376.725 223.750 378.691 M 474.750 378.691 L 473 380.657 473 415.674 L 473 450.690 474.829 452.345 L 476.657 454 495.079 453.992 C 533.854 453.975, 545.391 450.107, 553.046 434.559 L 556.175 428.202 556.699 420.351 C 558.852 388.092, 546.063 378.638, 498.500 377.330 L 476.500 376.725 474.750 378.691 M 610.655 378.829 L 609 380.657 609 415.674 L 609 450.690 610.829 452.345 L 612.657 454 631.079 453.992 C 652.722 453.982, 664.783 452.787, 672.737 449.863 L 678.500 447.745 683.681 442.465 L 688.863 437.184 690.931 430.487 C 702.616 392.655, 683.621 377.159, 625.405 377.029 L 612.310 377 610.655 378.829" stroke="none" fill="#a0a0a0" fillRule="evenodd"/>
@@ -213,7 +213,7 @@ function PSPP() {
     );
 }
 
-function MatLab() {
+export const MatLab = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 640 575">
             <defs>
@@ -233,7 +233,7 @@ function MatLab() {
     );
 }
 
-function Geogabra() {
+export const Geogabra = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 28 28">
             <path fill="none" stroke="#666" strokeWidth="2.2" d="m15.3,4.7a11.4,9.1-26 1,0 1,0z"/> 
@@ -246,7 +246,7 @@ function Geogabra() {
     );
 }
 
-function GoLang() {
+export const GoLang = () => {
     return (
         <svg width="100" height="100" x="0px" y="0px" viewBox="0 0 205.4 76.7" xmlSpace="preserve">
             <path fill="#00ACD7" d="M15.5,23.2c-0.4,0-0.5-0.2-0.3-0.5l2.1-2.7c0.2-0.3,0.7-0.5,1.1-0.5h35.7c0.4,0,0.5,0.3,0.3,0.6l-1.7,2.6      c-0.2,0.3-0.7,0.6-1,0.6L15.5,23.2z"/>
@@ -258,7 +258,7 @@ function GoLang() {
     );
 }
 
-function Thymeleaf() {
+export const Thymeleaf = () => {
     return (
         <svg width="100" height="100" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
             
@@ -269,7 +269,7 @@ function Thymeleaf() {
     );
 }
 
-function Docker() {
+export const Docker = () => {
     return (
         <svg width="100" height="100" viewBox="0 0 553.000000 412.000000" preserveAspectRatio="xMidYMid meet">
             
@@ -289,7 +289,7 @@ function Docker() {
     )
 }
 
-function MathAndPhysicsClub() {
+export const MathAndPhysicsClub = () => {
     return (
         <svg className="fill-foreground" viewBox="0 0 812 782" preserveAspectRatio="xMidYMid meet">
             
@@ -328,7 +328,7 @@ function MathAndPhysicsClub() {
     )
 };
 
-function SigmaZeta() {
+export const SigmaZeta = () => {
     return (
         <svg className="fill-foreground" viewBox="0 0 592 645" preserveAspectRatio="xMidYMid meet">
             
@@ -342,7 +342,7 @@ function SigmaZeta() {
     )
 };
 
-function EducationalTestingService() {
+export const EducationalTestingService = () => {
     return (
         <svg viewBox="0 0 60.917 44" xmlSpace="preserve">
             <path fill="#003082" d="M50.325,30.393l-0.07,0.055c-5.068,3.863-10.172,6.211-16.559,7.607    c-9.784,2.139-18.896,0.865-23.78-3.324c-2.198-1.881-3.427-4.238-3.659-7.004c-0.592-7.115,4.742-14.472,14.271-19.681    l0.095-0.053l-0.11-0.27L20.42,7.762C9.225,12.266,1.367,20.667,1.966,28.658c0.243,3.262,1.705,6.152,4.224,8.344    c5.196,4.525,14.402,5.932,24.623,3.752c8.235-1.752,14.789-5.43,19.631-10.045l0.092-0.094L50.325,30.393z"/>
@@ -356,7 +356,7 @@ function EducationalTestingService() {
 };
 
 
-function AssociationForComputingMachinery() {
+export const AssociationForComputingMachinery = () => {
     return (
         <svg viewBox="0 0 369 369">
             <path d="M 178.500 1.146 C 175.387 2.835, 3.053 175.159, 1.436 178.200 C 0.646 179.686, -0 183.058, -0 185.694 C -0 190.487, -0 190.487, 89.256 279.744 C 178.513 369, 178.513 369, 184.505 369 C 190.498 369, 190.498 369, 280.249 279.233 C 370 189.466, 370 189.466, 369.999 184.483 C 369.998 179.500, 369.998 179.500, 280.241 89.750 C 190.485 0, 190.485 -0, 185.492 0.030 C 182.747 0.047, 179.600 0.549, 178.500 1.146 M 174 73.526 C 173.175 73.688, 169.125 74.369, 165 75.039 C 131.600 80.471, 100.786 103.428, 85.190 134.500 C 54.374 195.895, 85.588 270.033, 151 290.807 C 177.413 299.196, 206.819 297.319, 231.400 285.674 C 244.109 279.654, 251.899 274.219, 262.251 264.149 C 283.112 243.856, 294.443 218.719, 295.718 189.903 C 296.380 174.924, 295.045 164.342, 290.807 151 C 276.046 104.523, 231.862 72.456, 183.500 73.122 C 179.100 73.182, 174.825 73.364, 174 73.526 M 176 84.662 C 152.148 86.991, 130.787 97.061, 113.924 113.924 C 80.645 147.203, 74.830 197.944, 99.716 237.904 C 116.396 264.690, 146.794 282.728, 178.500 284.656 C 252.540 289.158, 305.553 214.243, 276.950 145.534 C 260.652 106.384, 217.850 80.575, 176 84.662 M 123.047 166.264 C 115.600 168.727, 108.992 178.922, 109.006 187.928 C 109.027 201.524, 119.468 211.072, 132.724 209.619 C 135.901 209.270, 140.863 209.012, 143.750 209.044 L 149 209.103 149 187.486 L 149 165.870 142.750 165.951 C 139.313 165.996, 134.250 165.828, 131.500 165.577 C 128.750 165.327, 124.946 165.636, 123.047 166.264 M 168.429 166.829 C 160.967 170.335, 156 178.644, 156 187.623 C 156 196.899, 160.099 203.869, 167.784 207.661 C 172.313 209.895, 173.958 210.193, 179.284 209.739 C 182.703 209.448, 186.738 208.724, 188.250 208.130 C 190.686 207.173, 191 206.532, 191 202.525 C 191 200.036, 190.761 198, 190.468 198 C 190.175 198, 188.320 198.675, 186.346 199.500 C 181.787 201.405, 174.723 201.425, 171.085 199.544 C 167.662 197.774, 165 192.499, 165 187.485 C 165 182.924, 168.415 176.588, 171.673 175.103 C 175.070 173.556, 181.112 173.731, 185.346 175.500 C 187.320 176.325, 189.175 177, 189.468 177 C 189.761 177, 190 174.991, 190 172.535 C 190 167.002, 188.275 165.865, 179.038 165.310 C 174.070 165.012, 171.523 165.376, 168.429 166.829 M 211.520 166.509 C 209.617 167.538, 208.412 167.737, 208.187 167.060 C 207.992 166.477, 205.846 166, 203.417 166 C 199 166, 199 166, 199 187.500 C 199 209, 199 209, 203.500 209 C 208 209, 208 209, 208 194.606 C 208 180.212, 208 180.212, 210.901 177.106 C 213.040 174.816, 214.683 174.004, 217.151 174.015 C 224.082 174.047, 225 176.434, 225 194.434 C 225 209, 225 209, 229.500 209 C 234 209, 234 209, 234 195.035 C 234 181.070, 234 181.070, 237.104 177.535 C 241.083 173.002, 245.788 172.644, 248.927 176.635 C 250.813 179.032, 251 180.610, 251 194.135 C 251 209, 251 209, 255.566 209 C 260.132 209, 260.132 209, 259.816 192.173 C 259.515 176.128, 259.384 175.174, 257 171.677 C 251.587 163.735, 240.958 162.623, 233.845 169.253 C 231.190 171.728, 231.190 171.728, 228.164 168.702 C 225.719 166.258, 224.115 165.601, 219.819 165.287 C 216.197 165.022, 213.549 165.411, 211.520 166.509 M 124.719 175.777 C 121.528 177.753, 118 184.355, 118 188.348 C 118 192.435, 120.408 197.382, 123.328 199.296 C 126.258 201.215, 134.988 201.612, 138.066 199.965 C 139.805 199.034, 140 197.777, 140 187.500 C 140 177.223, 139.805 175.966, 138.066 175.035 C 135.101 173.449, 127.823 173.853, 124.719 175.777 M 0.300 185 C 0.300 188.025, 0.487 189.262, 0.716 187.750 C 0.945 186.238, 0.945 183.762, 0.716 182.250 C 0.487 180.738, 0.300 181.975, 0.300 185" stroke="none" fill="#4ab1d5" fillRule="evenodd"/><path d="M 174 73.526 C 173.175 73.688, 169.125 74.369, 165 75.039 C 131.600 80.471, 100.786 103.428, 85.190 134.500 C 54.374 195.895, 85.588 270.033, 151 290.807 C 177.413 299.196, 206.819 297.319, 231.400 285.674 C 244.109 279.654, 251.899 274.219, 262.251 264.149 C 283.112 243.856, 294.443 218.719, 295.718 189.903 C 296.380 174.924, 295.045 164.342, 290.807 151 C 276.046 104.523, 231.862 72.456, 183.500 73.122 C 179.100 73.182, 174.825 73.364, 174 73.526 M 176 84.662 C 152.148 86.991, 130.787 97.061, 113.924 113.924 C 80.645 147.203, 74.830 197.944, 99.716 237.904 C 116.396 264.690, 146.794 282.728, 178.500 284.656 C 252.540 289.158, 305.553 214.243, 276.950 145.534 C 260.652 106.384, 217.850 80.575, 176 84.662 M 123.047 166.264 C 115.600 168.727, 108.992 178.922, 109.006 187.928 C 109.027 201.524, 119.468 211.072, 132.724 209.619 C 135.901 209.270, 140.863 209.012, 143.750 209.044 L 149 209.103 149 187.486 L 149 165.870 142.750 165.951 C 139.313 165.996, 134.250 165.828, 131.500 165.577 C 128.750 165.327, 124.946 165.636, 123.047 166.264 M 168.429 166.829 C 160.967 170.335, 156 178.644, 156 187.623 C 156 196.899, 160.099 203.869, 167.784 207.661 C 172.313 209.895, 173.958 210.193, 179.284 209.739 C 182.703 209.448, 186.738 208.724, 188.250 208.130 C 190.686 207.173, 191 206.532, 191 202.525 C 191 200.036, 190.761 198, 190.468 198 C 190.175 198, 188.320 198.675, 186.346 199.500 C 181.787 201.405, 174.723 201.425, 171.085 199.544 C 167.662 197.774, 165 192.499, 165 187.485 C 165 182.924, 168.415 176.588, 171.673 175.103 C 175.070 173.556, 181.112 173.731, 185.346 175.500 C 187.320 176.325, 189.175 177, 189.468 177 C 189.761 177, 190 174.991, 190 172.535 C 190 167.002, 188.275 165.865, 179.038 165.310 C 174.070 165.012, 171.523 165.376, 168.429 166.829 M 211.520 166.509 C 209.617 167.538, 208.412 167.737, 208.187 167.060 C 207.992 166.477, 205.846 166, 203.417 166 C 199 166, 199 166, 199 187.500 C 199 209, 199 209, 203.500 209 C 208 209, 208 209, 208 194.606 C 208 180.212, 208 180.212, 210.901 177.106 C 213.040 174.816, 214.683 174.004, 217.151 174.015 C 224.082 174.047, 225 176.434, 225 194.434 C 225 209, 225 209, 229.500 209 C 234 209, 234 209, 234 195.035 C 234 181.070, 234 181.070, 237.104 177.535 C 241.083 173.002, 245.788 172.644, 248.927 176.635 C 250.813 179.032, 251 180.610, 251 194.135 C 251 209, 251 209, 255.566 209 C 260.132 209, 260.132 209, 259.816 192.173 C 259.515 176.128, 259.384 175.174, 257 171.677 C 251.587 163.735, 240.958 162.623, 233.845 169.253 C 231.190 171.728, 231.190 171.728, 228.164 168.702 C 225.719 166.258, 224.115 165.601, 219.819 165.287 C 216.197 165.022, 213.549 165.411, 211.520 166.509 M 124.719 175.777 C 121.528 177.753, 118 184.355, 118 188.348 C 118 192.435, 120.408 197.382, 123.328 199.296 C 126.258 201.215, 134.988 201.612, 138.066 199.965 C 139.805 199.034, 140 197.777, 140 187.500 C 140 177.223, 139.805 175.966, 138.066 175.035 C 135.101 173.449, 127.823 173.853, 124.719 175.777" stroke="none" fill="#ffffff" fillRule="evenodd"/>
@@ -364,94 +364,94 @@ function AssociationForComputingMachinery() {
     )
 };
 
-function CircuitBorder({color}: { color?: string }) {
+export const CircuitBorder = ({color}: { color?: string }) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="eUteV1XyRS01" viewBox="0 0 900 900" width={200} height={200}>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 900" width={200} height={200}>
         <g transform="matrix(.000628 1 1-.000628-1487.959962 172.88481)">
            <g transform="matrix(-1 0.000308-.000308-1 489.878886 2756.23054)">
               <g transform="translate(.000001 0)">
                  <g transform="translate(.000048 152.234828)">
-                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
                  </g>
                  <g transform="translate(.000048 295.789282)">
-                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
                  </g>
                  <g transform="translate(.000016 367.566514)">
-                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
                  </g>
                  <g transform="translate(.000001 400.171465)">
-                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
                  </g>
                  <g transform="translate(.000032 328.39423)">
-                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
                  </g>
                  <g transform="translate(.000016 224.012061)">
-                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
                  </g>
                  <g transform="translate(0 256.61701)">
-                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
                  </g>
                  <g transform="translate(.000032 184.839777)">
-                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                    <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                    <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
                  </g>
               </g>
               <g transform="translate(.000048 152.234828)">
-                 <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(.000048 295.789282)">
-                 <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(.000016 367.566514)">
-                 <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(.000001 400.171465)">
-                 <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
            </g>
            <g transform="translate(-1643.6887 670.86269)">
               <g transform="translate(2384.696656 585.611537)">
-                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(2384.911129 618.046771)">
-                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(2384.051805 657.197449)">
-                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(2385.317942 689.84191)">
-                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(2384.36409 833.436455)">
-                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(2385.28071 800.811985)">
-                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(2385.454183 761.631937)">
-                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
               <g transform="translate(2385.136104 729.064763)">
-                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                 <path d="M0,499.334918l400.151645.657388" transform="matrix(1.630428 0 0 1-252.2668 0.004315)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                 <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
               </g>
            </g>
         </g>
@@ -459,81 +459,53 @@ function CircuitBorder({color}: { color?: string }) {
     )
 };
 
-function CircuitBorder2({color}: { color?: string }) {
+export const CircuitBorder2 = ({color}: { color?: string }) => {
+
     return (
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="eB0dfeK2LoW1" viewBox="0 0 900 900"width={200} height={200}>
         <g transform="matrix(-.015167 0.999885 0.999885 0.015167 235.499342 157.519095)">
             <g transform="matrix(1 0 0-1-1444.227301 762.259853)">
-                <path d="M1920.023086,480.239035h-220.980318l-99.376257-29.965662" transform="translate(.000001 0.000001)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(1589.262622 445.083064)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M1920.023086,480.239035h-220.980318l-99.376257-29.965662" transform="translate(.000001 0.000001)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(1589.262622 445.083064)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="matrix(1 0 0-1-1469.701007 781.946736)">
-                <path d="M1940.830913,480.239035h-241.788145l-99.376257-29.965662" transform="translate(4.566205 50.220984)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(1593.828826 495.304048)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M1940.830913,480.239035h-241.788145l-99.376257-29.965662" transform="translate(4.566205 50.220984)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(1593.828826 495.304048)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="translate(475.69607-348.80962)">
-                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="translate(474.193131-379.26624)">
-                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="matrix(.96071 0 0 1-1316.500414-277.479462)">
-                <path d="M1864.122941,499.722599l-365.002938.224351" transform="translate(0-1.103219)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(1488.716113 498.61938)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M1864.122941,499.722599l-365.002938.224351" transform="translate(0-1.103219)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(1488.716113 498.61938)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="translate(475.696054-318.398977)">
-                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="translate(-1466.073832-288.909464)">
-                <path d="M1940.830914,479.584908l-241.788146.654127-99.376257-29.965662" transform="translate(.000001 0.000001)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(1589.262622 445.083064)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M1940.830914,479.584908l-241.788146.654127-99.376257-29.965662" transform="translate(.000001 0.000001)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(1589.262622 445.083064)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="translate(474.193147-409.676883)">
-                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="translate(-1446.581096-320.56109)">
-                <path d="M1920.023045,480.239035h-220.980277l-99.376257-29.965662" transform="translate(.000001 0.000001)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(1589.262622 445.083064)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M1920.023045,480.239035h-220.980277l-99.376257-29.965662" transform="translate(.000001 0.000001)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(1589.262622 445.083064)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
             <g transform="translate(473.441951-440.712114)">
-                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
-                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+                <path d="M0,599.711987l100.414932.444803L299.506905,499.992306h100.64474" transform="translate(0 0.661703)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
+                <ellipse rx="10.40389" ry="10.127657" transform="translate(410.555536 499.996621)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
             </g>
         </g>
-        <rect width="225" height="225" rx="0" ry="0" transform="matrix(.719351 0 0 0.744145 372.932085 57.260263)" fill="none" stroke={color ?? "#3f5787"} stroke-width="8"/>
+        <rect width="225" height="225" rx="0" ry="0" transform="matrix(.719351 0 0 0.744145 372.932085 57.260263)" fill="none" stroke={color ?? "none"} strokeWidth="8"/>
         </svg>
     )
-}
-
-export { 
-    Anchor, 
-    Close, 
-    CircleMeter, 
-    CircuitBorder,
-    CircuitBorder2,
-    Telerik, 
-    TypeScript, 
-    HTML5, 
-    JavaScript, 
-    DotNetCore, DynamoDB, 
-    React, 
-    Vue, 
-    GoogleTagManager, 
-    JQuery, 
-    LaTeX, 
-    Mathematica, 
-    PSPP, 
-    MatLab,
-    Geogabra,
-    GoLang,
-    Thymeleaf,
-    Docker,
-    MathAndPhysicsClub,
-    SigmaZeta,
-    EducationalTestingService,
-    AssociationForComputingMachinery
 }

@@ -1,4 +1,4 @@
-const {
+import {
     DotNetCore, 
     HTML5, 
     JavaScript, 
@@ -21,28 +21,102 @@ const {
     SigmaZeta,
     EducationalTestingService,
     AssociationForComputingMachinery
-} = require("@/app/images/SVGs")
+} from '@/components/utility/SVGs'
 
 const skills = {
-    JavaScript: {subtitle: "JavaScript", image:JavaScript()},
-    HTML5: {subtitle: "HTML 5", image:HTML5()},
-    JQuery: {subtitle: "jQuery", image:JQuery()},
-    VueJS: {subtitle: "VueJS", image:Vue()},
-    GoogleTagManager: {subtitle: "GTM", tooltip: "Google Tag Manager", image:GoogleTagManager()},
-    DynamoDB: {subtitle: "DynamoDB", image:DynamoDB()},
-    ReactJs: {subtitle: "ReactJS", image:React()},
-    TypeScript: {subtitle: "TypeScript", image:TypeScript()},
-    Telerik: {subtitle: "KendoUI", image:Telerik()},
-    DotNetCore: {subtitle: ".NET Core", image:DotNetCore()},
-    LaTeX: {subtitle: "LaTeX", image:LaTeX()},
-    Mathematica: {subtitle: "Mathamatica", tooltip: "Wolfram Mathematica", image:Mathematica()},
-    PSPP: {subtitle: "PSPP", image:PSPP()},
-    MatLab: {subtitle: "MatLab", image:MatLab()},
-    Geogabra: {subtitle: "Geogabra", image:Geogabra()},
-    GoLang: {subtitle: "GoLang", image:GoLang()},
-    Thymeleaf: {subtitle: "Thymeleaf", image:Thymeleaf()},
-    Docker: {subtitle: "Docker", image:Docker()},
-}
+    JavaScript: {
+        subtitle: "JavaScript",
+        image: JavaScript(),
+        href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    HTML5: {
+        subtitle: "HTML 5",
+        image: HTML5(),
+        href: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    },
+    JQuery: {
+        subtitle: "jQuery",
+        image: JQuery(),
+        href: "https://jquery.com/"
+    },
+    VueJS: {
+        subtitle: "VueJS",
+        image: Vue(),
+        href: "https://vuejs.org/"
+    },
+    GoogleTagManager: {
+        subtitle: "GTM",
+        tooltip: "Google Tag Manager",
+        image: GoogleTagManager(),
+        href: "https://support.google.com/tagmanager/"
+    },
+    DynamoDB: {
+        subtitle: "DynamoDB",
+        image: DynamoDB(),
+        href: "https://aws.amazon.com/dynamodb/"
+    },
+    ReactJs: {
+        subtitle: "ReactJS",
+        image: React(),
+        href: "https://reactjs.org/"
+    },
+    TypeScript: {
+        subtitle: "TypeScript",
+        image: TypeScript(),
+        href: "https://www.typescriptlang.org/"
+    },
+    Telerik: {
+        subtitle: "KendoUI",
+        image: Telerik(),
+        href: "https://www.telerik.com/kendo-ui"
+    },
+    DotNetCore: {
+        subtitle: ".NET Core",
+        image: DotNetCore(),
+        href: "https://docs.microsoft.com/en-us/dotnet/core/"
+    },
+    LaTeX: {
+        subtitle: "LaTeX",
+        image: LaTeX(),
+        href: "https://www.latex-project.org/"
+    },
+    Mathematica: {
+        subtitle: "Mathematica",
+        image: Mathematica(),
+        href: "https://www.wolfram.com/mathematica/"
+    },
+    PSPP: {
+        subtitle: "PSPP",
+        image: PSPP(),
+        href: "https://www.gnu.org/software/pspp/"
+    },
+    MatLab: {
+        subtitle: "MatLab",
+        image: MatLab(),
+        href: "https://www.mathworks.com/products/matlab.html"
+    },
+    Geogabra: {
+        subtitle: "Geogabra",
+        image: Geogabra(),
+        href: "https://www.geogebra.org/"
+    },
+    GoLang: {
+        subtitle: "GoLang",
+        image: GoLang(),
+        href: "https://golang.org/"
+    },
+    Thymeleaf: {
+        subtitle: "Thymeleaf",
+        image: Thymeleaf(),
+        href: "https://www.thymeleaf.org/"
+    },
+    Docker: {
+        subtitle: "Docker",
+        image: Docker(),
+        href: "https://www.docker.com/"
+    },
+};
+
 const decorations = {
     MathAndPhysicsClubPresident: {title: "President", dates:"2019-2020", subtitle: "Math & Physics Club", link: process.env.COLLEGE_OF_THE_OZARKS_URL, image:MathAndPhysicsClub()},
     SigmaZetaPresident: {title: "President", dates:"2020", subtitle: "ΣΖ Honor Society", tooltip: "Sigma Zeta Honor Society Beta-Phi Chapter", link: process.env.SIGMA_ZETA_URL, image:SigmaZeta()},

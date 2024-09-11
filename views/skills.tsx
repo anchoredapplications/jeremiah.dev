@@ -7,7 +7,7 @@ export default function Skills() {
   const $t = getDictionary();
 
   return (
-    <PageSection id={$t.skills.id} variant={PageSectionVariant.Secondary} showBorder={true}>
+    <PageSection id={$t.skills.id} variant={PageSectionVariant.Secondary}>
       <PageSectionHeader>{$t.skills.heading}</PageSectionHeader>
     </PageSection>
   );

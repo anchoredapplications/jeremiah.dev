@@ -21,7 +21,8 @@ export function getDurationBetweenDates(startDate: Date, endDate: Date) {
         months += 12;
     }
 
-    const yearsString = years ? `${years} year${years > 1 ? "s": ""}` : ""
-    const monthsString = months ? `${months} month${months > 1 ? "s": ""}` : ""
-    return [yearsString, monthsString].join(' ');
+    const yearsString = years ? `${years}yr${years > 1 ? "s": ""}` : ""
+    const monthsString = months ? `${months} mth${months > 1 ? "s": ""}` : ""
+    const yearMonthDuration = [yearsString, monthsString].join(' ');
+    return `${Math.round((years + months/12)*100)/100}yrs.`
 }
