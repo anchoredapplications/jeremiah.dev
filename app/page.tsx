@@ -4,7 +4,8 @@ import Academics from "@/views/academics";
 import Career from "@/views/career";
 import Home from "@/views/home";
 import Projects from "@/views/projects";
-import Skills from "@/views/skills";
+import Contact from "@/views/contact";
+import Footer from "@/views/footer";
 
 export default function Page() {
   return (
@@ -17,8 +18,9 @@ export default function Page() {
       <Home />
       <Career />
       <Academics />
-      <Skills />
       <Projects />
+      <Contact />
+      <Footer />
     </main>
   );
 }

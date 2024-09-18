@@ -15,6 +15,7 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: 
     const { theme } = useTheme()
     const [colorState, setColorState] = useState<string>()
     const [rotationState, setRotationState] = useState<boolean>()
+    const currentYear = new Date().getFullYear();
 
     useEffect(()=>{ 
         setColorState(theme === 'light' ? "#f0f0f0" : "#2A2A2A" )
@@ -27,6 +28,8 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: 
                 return "bg-background"
             case PageSectionVariant.Secondary:
                 return "bg-background-secondary"
+            case PageSectionVariant.Footer:
+                return "bg-background-secondary"
         }
     }
 
@@ -36,6 +39,8 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: 
                 return "color-background"
             case PageSectionVariant.Secondary:
                 return "color-inlay-secondary"
+            case PageSectionVariant.Footer:
+                return "border-black/10"
         }
     }
 
@@ -58,17 +63,28 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: 
         )
     }, [variant, colorState]);
 
-    // Memoized component
     const section = useMemo(() => (
         <section id={id} className={`relative w-full flex flex-col h-full min-h-screen ${getCSSForVariant(variant)}`}>
             { showBorder && border}
-            <div className="z-10 m-4">
+            <div className="z-10 p-4 h-full w-full flex flex-col flex-grow">
                 {children}
             </div>
         </section>
     ), [children, variant, border]);
 
-    return (section);
+    const footer = useMemo(() => (
+        <footer className={`py-2 border-t ${getBorderCSSForVariant(variant)} ${getCSSForVariant(variant)}`}>
+            <div className="container mx-auto text-center">
+                {children}
+            </div>
+        </footer>
+    ), [children, variant]);
+
+    if (variant === PageSectionVariant.Footer) {
+        return footer;
+    } else {
+        return section
+    }
 };
 
 export default memo(PageSection);

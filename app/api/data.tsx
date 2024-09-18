@@ -133,7 +133,7 @@ const experiences = [
         location: "Remote",
         description: (<ul>
             <li>Worked as a UI/UX Technical liaision for the Online Store Team, providing advisement for current and planned front-end efforts</li>
-            <li>Collaberated with fellow leads to guide UI/UX development and adherence to coding best-practices. </li>
+            <li>Guided UI/UX development, enforcing adherence to coding best-practices and the SCRUM methodology. </li>
         </ul>),
         skills: [
             skills.VueJS,
@@ -197,7 +197,7 @@ const experiences = [
         endDate: new Date(2020, 5, 1), 
         location: "Point Lookout, MO",
         description: (<p>
-            Worked as a lab assistant in the College's mathematics department. Assisted in instructing students in the areas of Calculus, Discrete Math, Trigonometry, and Statistics.
+            Worked as a lab assistant in the College's mathematics and physics department. Assisted in instructing students in the areas of Calculus, Calculus-based Physics, Abstract Algebra, Statistics, both Numerical and Real analysis, and more.
         </p>),
         skills: [
             skills.LaTeX,

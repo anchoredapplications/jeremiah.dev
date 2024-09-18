@@ -38,12 +38,36 @@
             "gpaLabel": "GPA: "
         }
     },
-    "skills": {
-        "id": "skills",
-        "heading": "skills"
-    },
     "projects": {
         "id": "projects",
         "heading": "projects"
+    },
+    "contact": {
+        "id": "contact",
+        "heading": "contact",
+        "email" : {
+            "name": "email",
+            "label": "Email Address",
+            "placeholder": "Your email address.",
+            "description": ""
+        },
+        "subject" : {
+            "name": "subject",
+            "label": "Subject",
+            "placeholder": "The subject of your enquiry.",
+            "description": ""
+        },
+        "body" : {
+            "name": "body",
+            "label": "Body",
+            "placeholder": "How can I help you?.",
+            "description": ""
+        },
+        "button": {
+            "label": "Submit"
+        }
+    },
+    "footer": {
+        "copyright": "Jeremiah D. Gage. All Rights Reserved."
     }
 }

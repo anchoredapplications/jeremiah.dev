@@ -7,7 +7,7 @@ export interface PageSectionContentProps {
 const PageSectionContent: FC<PageSectionContentProps> = ({children}: PageSectionContentProps) => {
     // Memoized component
     const content = useMemo(() => (
-        <div className={"w-full h-full flex flex-col justify-center items-center"}>
+        <div className={"w-full h-full flex flex-col flex-grow items-center justify-around"}>
             {children}
         </div>
     ), [children]);
