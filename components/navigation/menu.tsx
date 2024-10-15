@@ -13,7 +13,7 @@ import { getDictionary } from "@/dictionaries";
 import { Toggle } from "@radix-ui/react-toggle";
 import { Menu as MenuIcon } from "lucide-react"
 import Link from "next/link";
-import ThemeToggle from "./theme-toggle";
+import ThemeToggle from "../theme/theme-toggle";
 import { useTheme } from "next-themes";
 
 export interface BaseOptionProps {

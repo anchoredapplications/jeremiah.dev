@@ -1,5 +1,5 @@
-import Menu from "@/components/menu";
-import ThemeToggle from "@/components/theme-toggle";
+import Menu from "@/components/navigation/menu";
+import ThemeToggle from "@/components/theme/theme-toggle";
 import Academics from "@/views/academics";
 import Career from "@/views/career";
 import Home from "@/views/home";

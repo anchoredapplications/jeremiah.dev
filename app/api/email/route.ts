@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
+import config from '@/config.json'
+import { ContactFormSchemaType } from '@/types/contact';
 const { SESClient, SendEmailCommand } = require("@aws-sdk/client-ses");
 
 export async function POST(request: NextRequest) { 
     const body = await request.json();
     const data = body.email
-    const config = {
+    const awsConfig = {
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
         apiVersion: "2010-12-01",
@@ -25,7 +27,7 @@ export async function POST(request: NextRequest) {
             }, 
             Subject: {
                 Charset: "UTF-8", 
-                Data: `jeremiahgage.me: ${data.subject}`
+                Data: `${config}: ${data.subject}`
             }
         }, 
         ReplyToAddresses: [
@@ -34,10 +36,10 @@ export async function POST(request: NextRequest) {
         Source: process.env.SES_SENDER_ADDRESS
     };
     
-    const client = new SESClient(config);
+    const client = new SESClient(awsConfig);
     const send = new SendEmailCommand(params)
     return client.send(send).then(
-        (data) => {
+        (data: ContactFormSchemaType & { $metadata: any}) => {
             if (data.$metadata.httpStatusCode != 200) {
                 return NextResponse.json({ message: "Message failed!"});
             } else {

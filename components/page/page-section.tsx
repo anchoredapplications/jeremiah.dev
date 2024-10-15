@@ -1,6 +1,6 @@
 "use client"
 import { CircuitBorder, CircuitBorder2 } from "@/components/utility/SVGs";
-import { PageSectionVariant } from "@/types/PageVariant";
+import { PageSectionVariant } from "@/types/page";
 import { useTheme } from "next-themes";
 import { memo, useMemo, FC, ReactNode, useState, useEffect } from "react"
 

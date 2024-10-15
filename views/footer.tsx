@@ -1,6 +1,6 @@
-import PageSection from '@/components/page-section';
+import PageSection from '@/components/page/page-section';
 import { getDictionary } from '@/dictionaries';
-import { PageSectionVariant } from '@/types/PageVariant';
+import { PageSectionVariant } from '@/types/page';
 
 export default function Footer() {
   const $t = getDictionary();
@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <PageSection id="footer" variant={PageSectionVariant.Footer}>
-      <p>&copy; {currentYear} {$t.footer.copyright}</p>
+      <p className='font-extralight text-sm'>&copy; {currentYear} {$t.footer.copyright}</p>
     </PageSection>
   );
 }

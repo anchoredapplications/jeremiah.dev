@@ -1,3 +1,5 @@
+import { Skill } from "@/types/skill";
+
 export class Job {
     title: string;
     employer: string;

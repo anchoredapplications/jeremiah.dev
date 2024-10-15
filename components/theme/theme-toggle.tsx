@@ -4,7 +4,7 @@ import { memo, useMemo, useCallback, FC, useState, useEffect } from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes";
 import { getDictionary } from '@/dictionaries';
-import { Toggle } from "./ui/toggle";
+import { Toggle } from "../ui/toggle";
 
 interface ThemeToggleProps {
   className: string;

@@ -4,7 +4,7 @@ import React, { FC, memo, useCallback, useMemo, useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Skill as SkillType } from "@/types/skill"
 import { ComponentOf } from "../utility/componentOf"
-import { Tooltip } from "../Tooltip"
+import { Tooltip } from "../hover-tooltip"
 
 interface SkillsProps {
     skill: SkillType

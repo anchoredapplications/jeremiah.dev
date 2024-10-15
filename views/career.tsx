@@ -1,11 +1,11 @@
-import PageSection from "@/components/page-section";
-import { PageSectionVariant } from '@/types/PageVariant';
+import PageSection from "@/components/page/page-section";
+import { PageSectionVariant } from '@/types/page';
 import { getDictionary } from '@/dictionaries';
 import config from '@/config.json'
 import Timeline from "@/components/career/timeline";
 import { Job } from "@/types/job";
-import PageSectionContent from "@/components/page-section-content";
-import PageSectionHeader from "@/components/page-section-header";
+import PageSectionContent from "@/components/page/page-section-content";
+import PageSectionHeader from "@/components/page/page-section-header";
 
 async function getCareerData() {
   const res = await fetch(config.api.me.career)

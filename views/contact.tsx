@@ -1,8 +1,8 @@
-import PageSection from "@/components/page-section";
-import { PageSectionVariant } from '@/types/PageVariant';
-import PageSectionHeader from "@/components/page-section-header";
+import PageSection from "@/components/page/page-section";
+import { PageSectionVariant } from '@/types/page';
+import PageSectionHeader from "@/components/page/page-section-header";
 import { getDictionary } from '@/dictionaries';
-import PageSectionContent from "@/components/page-section-content";
+import PageSectionContent from "@/components/page/page-section-content";
 import { ContactForm } from "@/components/contact/contact-form";
 
 export default function Contact() {

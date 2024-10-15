@@ -15,29 +15,21 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "../ui/textarea"
 import { getDictionary } from "@/dictionaries"
- 
-const formSchema = z.object({
-    email: z.string().email(),
-    subject: z.string().min(2, {
-        message: "Subject must be at least 2 characters.",
-    }),
-    body: z.string().min(50, {
-        message: "Body must be at least 50 characters.",
-    }),
-})
+import { ContactFormSchema, ContactFormSchemaType } from "@/types/contact"
  
 export function ContactForm() {
     const $t = getDictionary();
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<ContactFormSchemaType>({
+        resolver: zodResolver(ContactFormSchema),
         defaultValues: {
             email: "",
             subject: "",
             body: ""
         },
     })
-    function onSubmit(values: z.infer<typeof formSchema>) {
+    function onSubmit(values: ContactFormSchemaType) {
+        //hit email route
         console.log(values)
     }
 

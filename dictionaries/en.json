@@ -60,7 +60,7 @@
         "body" : {
             "name": "body",
             "label": "Body",
-            "placeholder": "How can I help you?.",
+            "placeholder": "How can I help you?",
             "description": ""
         },
         "button": {

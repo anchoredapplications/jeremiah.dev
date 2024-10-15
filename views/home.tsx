@@ -1,9 +1,9 @@
-import PageSection from "@/components/page-section";
-import { PageSectionVariant } from '@/types/PageVariant';
+import PageSection from "@/components/page/page-section";
+import { PageSectionVariant } from '@/types/page';
 import TypeHeading from "@/components/type-heading";
 import { getDictionary } from '@/dictionaries';
-import DevNote from "@/components/dev-note";
-import PageSectionContent from "@/components/page-section-content";
+import DevNote from "@/components/developer/dev-note";
+import PageSectionContent from "@/components/page/page-section-content";
 
 export default function Home() {
   const $t = getDictionary();

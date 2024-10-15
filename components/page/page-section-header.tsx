@@ -8,7 +8,7 @@ const PageSectionHeader: FC<PageSectionHeaderProps> = ({children}: PageSectionHe
     // Memoized component
     const header = useMemo(() => (
         <h1 className={"p-4 flex flex-col text-3xl w-full font-serif items-center justify-center sm:justify-end sm:align-start sm:px-16"}>
-        {children}
+            {children}
         </h1>
     ), [children]);
 
