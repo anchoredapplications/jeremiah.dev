@@ -19,6 +19,12 @@ const config = {
       },
     },
     extend: {
+      spacing: {
+        "page-content": "calc(100vh - 82px)"
+      },
+      boxShadow: {
+        outer: '0 4px 10px rgba(0, 0, 0, 0.1)', 
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +63,11 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        dashboard: {
+          DEFAULT: "hsl(var(--dashboard))",
+          header: "hsl(var(--dashboard-header))",
+          foreground: "hsl(var(--dashboard-foreground))",
         },
       },
       borderRadius: {

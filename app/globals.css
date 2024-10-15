@@ -8,6 +8,10 @@
       --background-secondary: 0 3% 97%;
       --foreground: 222.2 84% 4.9%;
 
+      --dashboard: 0 0% 95%;
+      --dashboard-header: 0 0% 90%;
+      --dashboard-foreground: 222.2 84% 4.9%;
+
       --card: 0 0% 100%;
       --card-foreground: 222.2 84% 4.9%;
 
@@ -43,6 +47,9 @@
       --background: 222.2 0% 5%;
       --background-secondary: 222.2 3% 8%;
       --foreground: 210 40% 98%;
+
+      --dashboard: 0 4% 96%;
+      --dashboard-foreground: 222.2 84% 4.9%;
 
       --card: 222.2 0% 10%;
       --card-foreground: 210 40% 98%;
