@@ -40,7 +40,8 @@
     },
     "projects": {
         "id": "projects",
-        "heading": "projects"
+        "heading": "projects",
+        "placeholder": "P R O J E C T"
     },
     "contact": {
         "id": "contact",

@@ -19,7 +19,7 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
     // Memoized component
     const content = useMemo(() => (
         <div className="max-h-page-content w-full flex flex-col overflow-hidden rounded-md bg-dashboard shadow-inner">
-            <div className="p-4 flex flex-row-reverse bg-dashboard-header border-b border-dashboard-header shadow-xl">
+            <div className="min-h-14 p-4 flex flex-row-reverse bg-dashboard-header border-b border-dashboard-header shadow-xl">
                 <InfoIcon onClick={togglePressed} className={`cursor-pointer ${isPressed ? "text-neutral-700" : "text-neutral-900"}`}/>
             </div>
             <div className="flex px-4 gap-6">
