@@ -26,7 +26,7 @@ const config = {
         outer: '0 4px 10px rgba(0, 0, 0, 0.1)', 
       },
       colors: {
-        border: "hsl(var(--border))",
+        border: "var(--border)",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",

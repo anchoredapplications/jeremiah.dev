@@ -27,7 +27,7 @@ const ProjectViewer: FC<ProjectViewerProps> = ({ project }: ProjectViewerProps) 
     }, [project, $t]);
     // Memoized component
     const content = useMemo(() => (
-        <div className="flex-1 hidden pt-4 w-full h-screen gap-4 flex-col md:flex">
+        <div className="flex-1 flex pt-4 w-full h-screen gap-4 flex-col">
             <div className="rounded-md w-full h-full shadow-inner bg-dashboard-header flex items-center justify-center">
                 {display}
             </div>

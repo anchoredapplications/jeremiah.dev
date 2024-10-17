@@ -2,7 +2,6 @@ import { Project } from "@/types/project";
 import { memo, useMemo, FC, useCallback } from "react"
 import {
     Card,
-    CardContent,
     CardDescription,
     CardFooter,
     CardHeader,
@@ -21,7 +20,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, handleClick }: ProjectCard
     }, [handleClick, project])
     // Memoized component
     const content = useMemo(() => (
-        <Card onClick={onSelect} className="rounded-xl my-2 w-full md:w-80 hover:cursor-pointer hover:shadow-outer">
+        <Card onClick={onSelect} className="rounded-xl my-2 w-full lg:w-80 hover:cursor-pointer hover:shadow-outer">
             <CardHeader>
                 <CardTitle>
                     <div className="flex items-center justify-between">
@@ -31,9 +30,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, handleClick }: ProjectCard
                 </CardTitle>
                 <CardDescription>{project.description}</CardDescription>
             </CardHeader>
-            <CardFooter>
-                <a href={project.link.href}>{project.link.label}</a>
-            </CardFooter>
+            <CardFooter />
         </Card>
     ), [project]);
 

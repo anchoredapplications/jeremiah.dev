@@ -38,11 +38,11 @@ export default async function Academics() {
             </h3>
           </span>
           {/* Focuses */}
-          <div className="flex flex-col text-start sm:grid sm:grid-cols-2  sm:flex-row">
-            <div className="flex  border-gray-300 sm:pr-2 sm:border-r">
+          <div className="flex flex-col text-start md:grid md:grid-cols-2  md:flex-row">
+            <div className="flex  border-gray-300 md:pr-2 md:border-r">
               <Focus focus={academics.focuses[0]}/>
             </div>
-            <div className="flex sm:pl-2">
+            <div className="flex md:pl-2">
               <Focus focus={academics.focuses[1]}/>
             </div>
           </div>

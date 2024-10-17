@@ -36,7 +36,7 @@
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 210 40% 98%;
 
-      --border: 214.3 31.8% 91.4%;
+      --border: #4B5563; 
       --input: 214.3 31.8% 91.4%;
       --ring: 222.2 84% 4.9%;
 
@@ -47,9 +47,10 @@
       --background: 222.2 0% 5%;
       --background-secondary: 222.2 3% 8%;
       --foreground: 210 40% 98%;
-
-      --dashboard: 0 4% 96%;
-      --dashboard-foreground: 222.2 84% 4.9%;
+      
+      --dashboard: 222.2 0% 15%;
+      --dashboard-header: 222.2 0% 10%;
+      --dashboard-foreground: 210 40% 90%;
 
       --card: 222.2 0% 10%;
       --card-foreground: 210 40% 98%;
@@ -75,7 +76,7 @@
       --destructive: 0 62.8% 30.6%;
       --destructive-foreground: 210 40% 98%;
 
-      --border: 217.2 32.6% 17.5%;
+      --border: #1F2937; 
       --input: 217.2 32.6% 17.5%;
       --ring: 212.7 26.8% 83.9%;
     }

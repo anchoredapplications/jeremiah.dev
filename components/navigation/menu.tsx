@@ -66,7 +66,7 @@ const Menu: FC<MenuProps> = () => {
             <div className="fixed left-0 top-0" >
                 {MenuToggle}
             </div>
-            <SheetContent side={"left"}>
+            <SheetContent side={"left"} className="dark:border-border">
                 <SheetDescription className="sr-only">
                     {$t.menu.description}
                 </SheetDescription>
