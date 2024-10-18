@@ -1,5 +1,6 @@
+"use client"
 import { AspectRatio } from '@/globals/aspect-ratio'
-import { FC, ReactNode, useMemo } from 'react'
+import { FC, ReactNode, useEffect, useMemo, useState } from 'react'
 import MediaQuery from 'react-responsive'
 
 export interface BaseProps {
@@ -7,11 +8,14 @@ export interface BaseProps {
 }
 
 export const getBreakpointComponent: (resolutionMin: AspectRatio, resolutionMax: AspectRatio) => FC<BaseProps> = (resolutionMin: number, resolutionMax: number) => ({children}: BaseProps) => {
-    const component = useMemo(() => (
+    const [onClient, setOnClient] = useState<boolean>(false)
+    useEffect(() => { setOnClient(true) })
+
+    const component = useMemo(() => onClient ? (
         <MediaQuery minWidth={resolutionMin} maxWidth={resolutionMax}>
             {children}
         </MediaQuery>
-    ), [children])
+    ) : (<></>), [onClient, children])
 
     return component
 }

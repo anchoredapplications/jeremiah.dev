@@ -41,6 +41,7 @@
     "projects": {
         "id": "projects",
         "heading": "projects",
+        "description": "A showcase of personal, published projects.",
         "placeholder": "P R O J E C T"
     },
     "contact": {

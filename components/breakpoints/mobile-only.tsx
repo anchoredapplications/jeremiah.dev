@@ -1,3 +1,4 @@
+"use client"
 import { memo } from "react"
 import {getBreakpointComponent} from "./base"
 import { AspectRatio } from "@/globals/aspect-ratio"

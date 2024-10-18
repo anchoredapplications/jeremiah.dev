@@ -8,7 +8,6 @@ import ProjectDrawer from "./project-drawer";
 import { getDictionary } from "@/dictionaries";
 import MobileTabletOnly from "../breakpoints/mobile-tablet-only";
 import DesktopOnly from "../breakpoints/desktop-only";
-import MobileOnly from "../breakpoints/mobile-only";
 
 interface ProjectDashboardProps {
     projects: Project[];

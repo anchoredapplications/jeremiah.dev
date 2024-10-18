@@ -3,6 +3,8 @@ import { memo, useMemo, FC, ReactNode } from "react"
 import {
     Drawer,
     DrawerContent,
+    DrawerDescription,
+    DrawerTitle,
 } from "@/components/ui/drawer"
 
 interface ProjectDrawerProps {
@@ -17,6 +19,8 @@ const ProjectDrawer: FC<ProjectDrawerProps> = ({ openState, children, setIsOpen 
     // Memoized component
     const content = useMemo(() => (
         <Drawer open={openState} onOpenChange={setIsOpen}>
+            <DrawerTitle className="sr-only">{$t.projects.heading}</DrawerTitle>
+            <DrawerDescription className="sr-only">{$t.projects.description}</DrawerDescription>
             <DrawerContent className="h-3/4 p-4">
                 {children}
             </DrawerContent>
