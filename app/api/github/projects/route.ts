@@ -1,6 +1,7 @@
+import { getProjectsData } from '@/server/getProjectsData'
 import { NextResponse } from 'next/server'
-import { GetGitHubProjects } from '../github'
  
 export async function GET(request: Request) { 
-  return NextResponse.json(await GetGitHubProjects())
+  const data = await getProjectsData()
+  return NextResponse.json(data)
 }

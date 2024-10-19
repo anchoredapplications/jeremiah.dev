@@ -8,6 +8,10 @@
             "projects" : "/api/me/projects"
         }
     },
+    "github": {
+        "api": "https://api.github.com",
+        "repos": "/users/anchoredapplications/repos"
+    },
     "linkedIn": {
         "url" : "https://www.linkedin.com/in/jeremiah-gage/",
         "path": {

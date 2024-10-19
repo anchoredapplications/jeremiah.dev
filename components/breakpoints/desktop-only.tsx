@@ -2,6 +2,6 @@ import { memo } from "react"
 import {getBreakpointComponent} from "./base"
 import { AspectRatio } from "@/globals/aspect-ratio"
 
-const MobileTabletOnly = getBreakpointComponent(AspectRatio.SM, AspectRatio.LG)
+const DesktopOnly = getBreakpointComponent(AspectRatio.LG, AspectRatio.MAX)
 
-export default memo(MobileTabletOnly)
+export default memo(DesktopOnly)

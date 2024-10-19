@@ -1,6 +1,7 @@
+import { getLanguagesData } from '@/server/getLanguagesData'
 import { NextResponse } from 'next/server'
-import { GetGitHubLanguages } from '../github'
  
 export async function GET(request: Request) { 
-  return NextResponse.json(await GetGitHubLanguages())
+  const data = await getLanguagesData()
+  return NextResponse.json(data)
 }
