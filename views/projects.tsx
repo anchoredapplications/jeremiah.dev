@@ -3,11 +3,11 @@ import { PageSectionVariant } from '@/types/page';
 import PageSectionHeader from "@/components/page/page-section-header";
 import { getDictionary } from '@/dictionaries';
 import PageSectionContent from "@/components/page/page-section-content";
-import ProjectCardList from "@/components/projects/project-card-list";
 import { Project } from "@/types/project";
 import ProjectDashboard from "@/components/projects/project-dashboard";
+import config from "@/config.json";
 
-function getProjectData(): Project[] {
+function getProjectTestData(): Project[] {
   return [
       {
           name: "Weather App",
@@ -49,9 +49,15 @@ function getProjectData(): Project[] {
   ]; 
 }
 
+async function getProjectData() {
+  const res = await fetch(config.api.me.academics)
+  if (!res.ok) throw new Error('Failed to fetch data')
+  return res.json()
+}
+
 export default function Projects() {
   const $t = getDictionary();
-  const projects = getProjectData()
+  const projects = getProjectTestData()
 
   return (
     <PageSection id={$t.projects.id} variant={PageSectionVariant.Secondary}>

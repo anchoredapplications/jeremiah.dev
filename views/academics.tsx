@@ -7,15 +7,15 @@ import PageSectionHeader from "@/components/page/page-section-header";
 import { getDictionary } from '@/dictionaries';
 import { Academics } from "@/types/academics";
 import Focus from '@/components/academics/focus';
+import { getAcademicData } from '@/server/getAcademicData';
 
-async function getAcademicData() {
-  const res = await fetch(config.api.me.academics)
-  if (!res.ok) throw new Error('Failed to fetch data')
-  return res.json()
+async function loadAcademicData() {
+  const data = await getAcademicData()
+  return data
 }
 
 export default async function Academics() {
-  const academics: Academics = await getAcademicData()
+  const academics: Academics = await loadAcademicData()
   const $t = getDictionary();
 
   return (

@@ -1,6 +1,4 @@
 "use client"
-
-import { useTheme } from "next-themes"
 import { FC, memo, useMemo } from "react"
 import TimelineItem from "./timeline-item"
 import { Job } from "@/types/job"

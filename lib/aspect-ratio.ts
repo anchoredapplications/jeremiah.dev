@@ -4,6 +4,7 @@ interface GetQueryProps {
     minWidth?: AspectRatio, 
     maxWidth?: AspectRatio
 }
+
 export function getQuery({minWidth, maxWidth}: GetQueryProps): string {
     const queryOf = (type: "min" | "max", value: AspectRatio) => `(${type}-width: ${value}px)`
     const queryParameters = []

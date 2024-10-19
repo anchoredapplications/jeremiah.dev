@@ -3,8 +3,9 @@
         "site": "jeremiah.dev",
         "protocol": "https",
         "me": {
-            "career" : "http://localhost:3000/api/me/experience",
-            "academics" : "http://localhost:3000/api/me/academia"
+            "career" : "/api/me/experience",
+            "academics" : "/api/me/academia",
+            "projects" : "/api/me/projects"
         }
     },
     "linkedIn": {

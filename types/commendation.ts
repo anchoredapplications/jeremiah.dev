@@ -4,6 +4,6 @@ export type Commendation = {
     title: string,
     subtitle: string,
     dates: string,
-    link: string,
+    link?: string,
     image: ReactNode
 }
