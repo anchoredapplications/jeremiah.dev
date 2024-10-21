@@ -13,7 +13,7 @@ const ProjectViewer: FC<ProjectViewerProps> = ({ project }: ProjectViewerProps) 
     const display = useMemo(() => {
         if (project?.demo) {
             return (
-                <iframe src={project?.link?.href} className="rounded-md w-full h-full"/>
+                <iframe src={project?.demo?.href} className="rounded-md w-full h-full"/>
             )
         } else if (project?.image) {
             return (
