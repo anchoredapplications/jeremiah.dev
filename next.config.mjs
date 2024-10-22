@@ -7,8 +7,7 @@ const nextConfig = {
             headers: [
               {
                 key: 'Content-Security-Policy',
-                value: "default-src 'self'; frame-src 'self' https://*.jeremiahgage.me https://*.jeremiah.dev https://dateinyourcircle.com https://ozarkhighlandshepherds.com;"
-              },
+                "value": "frame-ancestors 'self' https://*.jeremiahgage.me https://*.jeremiah.dev https://dateinyourcircle.com https://ozarkhighlandshepherds.com"              },
             ],
           },
         ];

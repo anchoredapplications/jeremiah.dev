@@ -6,7 +6,7 @@ export function parseProject(project: GithubRepository): Project {
         name: project.name,
         description: project.description ?? "",
         summary: project.description ?? "",
-        icon: { src: `${project.html_url}/blob/master/thumbnail.png?raw=true`, alt:project.name.split("-").map(e=>e[0].toUpperCase()).join("")} ,
+        icon: { src: `${project.html_url}/blob/main/thumbnail.png?raw=true`, alt:project.name.split("-").map(e=>e[0].toUpperCase()).join("")} ,
         link: { href: project.html_url, label: ""},
         demo: project.homepage ? { href: project.homepage, label: ""} : undefined,
         image: project.owner.avatar_url,
