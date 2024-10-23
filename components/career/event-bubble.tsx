@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes"
 import { FC, memo, useMemo } from "react"
 import { ChevronRight, ChevronLeft } from "lucide-react"
 interface EventBubble {
@@ -9,8 +8,6 @@ interface EventBubble {
 }
 
 const EventBubble: FC<EventBubble> = ({heading, subheading, showLeftArrow, showRightArrow}: EventBubble) => {
-    const {theme} = useTheme()
-
     const component = useMemo(() => (
         <span className="flex items-center justify-center">
             { showLeftArrow && <ChevronLeft className="sm:hidden"/> }
@@ -20,7 +17,7 @@ const EventBubble: FC<EventBubble> = ({heading, subheading, showLeftArrow, showR
             </button>
             { showRightArrow && <ChevronRight className="sm:hidden"/> }
         </span>
-    ), [theme])
+    ), [showLeftArrow, showRightArrow, heading, subheading])
 
     return component
 }

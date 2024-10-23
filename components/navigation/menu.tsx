@@ -37,28 +37,28 @@ const Menu: FC<MenuProps> = () => {
         setIsPressed(i => !i)
     }, [])
 
-    const baseOption = (props: BaseOptionProps, id: string, heading: string) => (
-        <SheetClose asChild key={id} onClick={togglePressed} className="flex">
-            <Link {...props} className={"flex flex-row-reverse w-full text-2xl font-serif hover:cursor-pointer"}>{heading}</Link>
-        </SheetClose>
-    )
-
-    const toggleOption = ({id, heading}: {id: string, heading: string}) => {return baseOption({ href: `/#${id}`, scroll:true}, id, heading)}
-    
-    const devThemeOption = () => baseOption({ href:'/#', onClick: () => {setTheme(theme === $t.theme.keys.dev ? $t.theme.keys.dark : $t.theme.keys.dev)}, scroll:true}, "", $t.theme.dev)
-
     const MenuToggle = useMemo(() =>(
         <Toggle className={`aspect-square p-2`} aria-label={$t.menu.toggle} pressed={isPressed} onPressedChange={setChangeDrawerOpen}>
           <MenuIcon className={`${isPressed ? "rotate-90" : "rotate-0"} transition-all`}/>
         </Toggle>
-    ), [isPressed, setChangeDrawerOpen])
+    ), [$t, isPressed, setChangeDrawerOpen])
 
-    const Navigation = useMemo(() => (
-        <nav className="flex flex-col gap-4 m-4 pt-4 border-t-2 dark:border-t">
-            <>{ $t.navigation.map(toggleOption) }</>
-            <>{ devThemeOption() }</>
-        </nav>
-    ), [toggleOption, devThemeOption])
+    const Navigation = useMemo(() => {
+        const baseOption = (props: BaseOptionProps, id: string, heading: string) => (
+            <SheetClose asChild key={id} onClick={togglePressed} className="flex">
+                <Link {...props} className={"flex flex-row-reverse w-full text-2xl font-serif hover:cursor-pointer"}>{heading}</Link>
+            </SheetClose>
+        )
+        const toggleOption = ({id, heading}: {id: string, heading: string}) => {return baseOption({ href: `/#${id}`, scroll:true}, id, heading)}
+        const devThemeOption = () => baseOption({ href:'/#', onClick: () => {setTheme(theme === $t.theme.keys.dev ? $t.theme.keys.dark : $t.theme.keys.dev)}, scroll:true}, "", $t.theme.dev)
+    
+        return (
+            <nav className="flex flex-col gap-4 m-4 pt-4 border-t-2 dark:border-t">
+                <>{ $t.navigation.map(toggleOption) }</>
+                <>{ devThemeOption() }</>
+            </nav>
+        )
+    }, [$t, setTheme, theme])
 
     // Memoized component
     const menu = useMemo(() => (
@@ -80,7 +80,7 @@ const Menu: FC<MenuProps> = () => {
                 <ThemeToggle className="absolute right-0 bottom-0"/>
             </SheetContent>
         </Sheet>
-    ), [MenuToggle, Navigation]);
+    ), [$t, MenuToggle, Navigation, isPressed]);
 
     return (menu);
 };

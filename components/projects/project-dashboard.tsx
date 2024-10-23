@@ -32,7 +32,7 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
     // Memoized component
     const cardList = useMemo(() => (
         <ProjectCardList projects={projects} handleClick={selectProject} />
-    ), [projects, setSelectedProject]);
+    ), [projects, selectProject]);
     
     // Memoized component
     const projectViewer = useMemo(() => (
@@ -65,7 +65,7 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
                 </div>
             </div>
         </div>
-    ), [selectedProject, cardList, projectDrawer, projectViewer]);
+    ), [cardList, projectDrawer, projectViewer, isPressed, togglePressed]);
 
     return (content);
 };

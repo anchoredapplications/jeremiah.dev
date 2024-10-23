@@ -14,7 +14,7 @@ const ProjectCardList: FC<ProjectCardProps> = ({ projects, handleClick }: Projec
         <ScrollArea className="max-h-dashboard-content min-w-fit w-full flex flex-col px-2 lg:w-fit">
             {projects.map((project: Project) => (<ProjectCard  key={project.name} handleClick={handleClick} project={project} />))}
         </ScrollArea>
-    ), [projects]);
+    ), [projects, handleClick]);
 
     return (content);
 };

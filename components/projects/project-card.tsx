@@ -32,7 +32,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, handleClick }: ProjectCard
             </CardHeader>
             <CardFooter />
         </Card>
-    ), [project]);
+    ), [project, onSelect]);
 
     return (content);
 };

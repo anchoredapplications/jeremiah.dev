@@ -20,7 +20,7 @@ const Commendation: FC<CommendationProps> = ({ commendation }: CommendationProps
                 {commendation.dates}
             </h5>
         </div>
-    ), [])
+    ), [commendation])
 
     return component
 }

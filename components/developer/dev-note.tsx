@@ -1,5 +1,4 @@
 "use client"
-
 import { getDictionary } from "@/dictionaries"
 import { useTheme } from "next-themes"
 import { FC, ReactNode, memo, useMemo } from "react"
@@ -17,9 +16,6 @@ interface DevNote {
 }
 
 const DevNote: FC<DevNote> = ({note, children}: DevNote) => {
-    const {theme} = useTheme()
-    const $t = getDictionary()
-
     const devNote = useMemo(() => (
         <div className="flex flex-col justify-center items-center w-full h-full">
             <div className="relative p-8">
@@ -34,7 +30,7 @@ const DevNote: FC<DevNote> = ({note, children}: DevNote) => {
                 {children}
             </div>
         </div>
-    ), [theme])
+    ), [children, note])
 
     return devNote
 }

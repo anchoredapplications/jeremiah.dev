@@ -22,7 +22,7 @@ const Focus: FC<FocusProps> = ({ focus, isFirst, isLast }: FocusProps) => {
             </h4>
             <ComponentOf jsx={focus.description} style="flex flex-col text-lg gap-4"/>
         </div>
-    ), [])
+    ), [$t, focus, isFirst, isLast])
 
     return component
 }

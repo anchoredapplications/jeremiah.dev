@@ -9,7 +9,7 @@ export interface BaseProps {
 
 export const getBreakpointComponent: (resolutionMin: AspectRatio, resolutionMax: AspectRatio) => FC<BaseProps> = (resolutionMin: number, resolutionMax: number) => ({children}: BaseProps) => {
     const [onClient, setOnClient] = useState<boolean>(false)
-    useEffect(() => { setOnClient(true) })
+    useEffect(() => { setOnClient(true) }, [setOnClient])
 
     const component = useMemo(() => onClient ? (
         <MediaQuery minWidth={resolutionMin} maxWidth={resolutionMax}>

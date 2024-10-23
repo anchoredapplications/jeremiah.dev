@@ -14,13 +14,8 @@ interface TimelineItem {
 }
 
 const TimelineItem: FC<TimelineItem> = ({event, firstItem, lastItem}: TimelineItem) => {
-    const {theme} = useTheme()
-    const heading = `${event.startDate} - ${event.endDate}`
-    const subheading = event.duration
-
     const component = useMemo(() => (
         <li className="w-full h-full flex flex-col items-center gap-4 p-8">
-            {/* <EventBubble heading={heading} subheading={subheading} showLeftArrow={!firstItem} showRightArrow={!lastItem} /> */}
             <div className="w-full h-full shadow-xl bg-card p-4 rounded-xl m-4 flex flex-col justify-between">
                 <div className="flex flex-col">
                     <span className="flex justify-between w-full items-center">
@@ -40,7 +35,7 @@ const TimelineItem: FC<TimelineItem> = ({event, firstItem, lastItem}: TimelineIt
                 </div>
             </div>
         </li>
-    ), [theme])
+    ), [event])
 
     return component
 }

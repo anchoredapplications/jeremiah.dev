@@ -71,7 +71,7 @@ const TypeHeading: FC<ThemeToggleProps> = ({className, stack}: ThemeToggleProps)
         <h1 className={`text-4xl font-serif ${className}`}>
             {sharedText}{heading}
         </h1>
-    ), [heading])
+    ), [className, sharedText, heading])
 
     return typeHeading
 }

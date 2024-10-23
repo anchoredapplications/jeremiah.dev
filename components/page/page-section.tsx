@@ -61,7 +61,7 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: 
                 </div>
             </div>
         )
-    }, [variant, colorState]);
+    }, [variant, colorState, rotationState]);
 
     const section = useMemo(() => (
         <section id={id} className={`relative w-full flex flex-col h-full min-h-screen ${getCSSForVariant(variant)}`}>
@@ -70,7 +70,7 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: 
                 {children}
             </div>
         </section>
-    ), [children, variant, border]);
+    ), [id, showBorder, children, variant, border]);
 
     const footer = useMemo(() => (
         <footer className={`py-2 border-t ${getBorderCSSForVariant(variant)} ${getCSSForVariant(variant)}`}>

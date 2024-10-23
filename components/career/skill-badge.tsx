@@ -22,7 +22,7 @@ const SkillBadge: FC<SkillsProps> = ({ skill }: SkillsProps) => {
                 </Badge>
             </a>
         </Tooltip>
-    ), [])
+    ), [skill])
 
     return component
 }

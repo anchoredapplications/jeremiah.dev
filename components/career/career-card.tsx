@@ -1,5 +1,4 @@
 import { Job } from "@/types/job"
-import { useTheme } from "next-themes"
 import { FC, memo, useMemo } from "react"
 
 interface CareerCard {
@@ -7,10 +6,7 @@ interface CareerCard {
 }
 
 const CareerCard: FC<CareerCard> = ({job}: CareerCard) => {
-    const {theme} = useTheme()
-
-    const component = useMemo(() => (
-        
+    const component = useMemo(() => ( 
         <table>
             <tbody>
                 <tr>
@@ -31,7 +27,7 @@ const CareerCard: FC<CareerCard> = ({job}: CareerCard) => {
                 </tr>
             </tbody>
             </table>
-    ), [theme])
+    ), [job])
 
     return component
 }
