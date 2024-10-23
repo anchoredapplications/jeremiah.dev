@@ -19,6 +19,15 @@ const config = {
       },
     },
     extend: {
+      animation: {
+        shimmer: 'shimmer 1.5s infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '-200px 0' },
+          '100%': { backgroundPosition: '200px 0' },
+        },
+      },
       spacing: {
         "page-content": "calc(100vh - 82px)",
         "dashboard-content": "calc(100vh - 164px)"
@@ -27,6 +36,8 @@ const config = {
         outer: '0 4px 10px rgba(0, 0, 0, 0.1)', 
       },
       colors: {
+        'shimmer-light': '#f0f0f0',
+        'shimmer-dark': '#e0e0e0',
         border: "var(--border)",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
