@@ -11,6 +11,8 @@ export type GithubDocument = Endpoints["GET /repos/{owner}/{repo}/contents/{path
 
 export type GithubLanguages = Endpoints["GET /repos/{owner}/{repo}/languages"]["response"]["data"];
 
+export type InternalGithubProject = GithubRepository & { image?: string };
+
 export interface InternalGithubDocument {
     key: string,
     documents: {

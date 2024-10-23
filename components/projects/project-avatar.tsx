@@ -10,8 +10,8 @@ const ProjectAvatar: FC<ProjectAvatarProps> = ({ icon }: ProjectAvatarProps) => 
     // Memoized component
     const content = useMemo(() => (
         <Avatar>
-            <AvatarImage src={icon.src} />
-            <AvatarFallback>{icon.alt}</AvatarFallback>
+            <AvatarImage src={icon?.src} />
+            <AvatarFallback>{icon?.alt}</AvatarFallback>
         </Avatar>
     ), [icon]);
 

@@ -11,8 +11,8 @@ interface ProjectCardProps {
 const ProjectCardList: FC<ProjectCardProps> = ({ projects, handleClick }: ProjectCardProps) => {
     // Memoized component
     const content = useMemo(() => (
-        <ScrollArea className="max-h-page-content min-w-fit w-full flex flex-col px-2 pb-12 lg:w-fit">
-            {projects.map((project: Project) => (<ProjectCard handleClick={handleClick} key={project.name} project={project} />))}
+        <ScrollArea className="max-h-dashboard-content min-w-fit w-full flex flex-col px-2 lg:w-fit">
+            {projects.map((project: Project) => (<ProjectCard  key={project.name} handleClick={handleClick} project={project} />))}
         </ScrollArea>
     ), [projects]);
 

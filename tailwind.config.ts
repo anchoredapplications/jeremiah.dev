@@ -20,7 +20,8 @@ const config = {
     },
     extend: {
       spacing: {
-        "page-content": "calc(100vh - 82px)"
+        "page-content": "calc(100vh - 82px)",
+        "dashboard-content": "calc(100vh - 164px)"
       },
       boxShadow: {
         outer: '0 4px 10px rgba(0, 0, 0, 0.1)', 

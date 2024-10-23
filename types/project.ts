@@ -5,8 +5,8 @@ export type Project = {
     name: string,
     description: string,
     summary: string,
-    icon: Icon
     link: Link
+    icon?: Icon
     demo?: Link
     image?: string
 }

@@ -1,15 +1,16 @@
 import config from "@/config.json";
 import { Octokit } from "octokit";
-import { GithubDocument, GithubRepository, InternalGithubDocument, InternalGithubLanguages, SimpleCache } from "@/types/github";
+import { GithubDocument, GithubRepository, InternalGithubDocument, InternalGithubLanguages, InternalGithubProject, SimpleCache } from "@/types/github";
 
 const octokit = new Octokit({
-    auth: ""
+    auth: process.env.GITHUB_API_URL ?? ""
 });
 
 const basePath = config.github.api + config.github.repos
 
 //STATE VARIABLES
 const GITHUB_REPOSITORIES: SimpleCache<GithubRepository> = { value: [], dateUpdated: null }
+const GITHUB_PROJECTS: SimpleCache<InternalGithubProject> = { value: [], dateUpdated: null }
 const GITHUB_LANGUAGES: SimpleCache<InternalGithubLanguages> = { value: [], dateUpdated: null }
 const GITHUB_DOCUMENTS: SimpleCache<InternalGithubDocument> = { value: [], dateUpdated: null }
 
@@ -40,6 +41,13 @@ export async function GetGitHubRepositories() {
         await LoadGitHubRepositories() 
     }    
     return GITHUB_REPOSITORIES
+}
+
+export async function GetGitHubProjects() {
+    if (!stateIsValid(GITHUB_PROJECTS)) {
+        await LoadGitHubProjects() 
+    }    
+    return GITHUB_PROJECTS
 }
 
 export async function GetGitHubLanguages() {
@@ -80,6 +88,27 @@ async function LoadGitHubRepositories() {
     GITHUB_REPOSITORIES.dateUpdated = new Date()
     
     return response.status;
+}
+
+async function LoadGitHubProjects() {
+    const repositories = await GetGitHubRepositories();
+    const getPublicRepoImage = (repo: InternalGithubProject) => `${repo.html_url}/blob/main/thumbnail.png?raw=true`;
+    const getPrivateRepoImage = async (repo: InternalGithubProject) => {
+        const response = await octokit.request(repo.contents_url, {
+            path: config.github.thumbnailName
+        }).catch(console.log);
+        return `data:image/png;base64,${response?.data?.content}`;
+    };
+    
+    const projects = await Promise.all(repositories.value.map(async (el: GithubRepository) => ({
+        ...el,
+        image: el.private? await getPrivateRepoImage(el) : getPublicRepoImage(el)
+    })));
+
+    GITHUB_PROJECTS.value = projects;
+    GITHUB_PROJECTS.dateUpdated = new Date();
+    
+    return true;
 }
 
 async function LoadGitHubLanguages() {
