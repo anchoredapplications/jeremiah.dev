@@ -1,6 +1,4 @@
-
 "use client"
-
 import {
     Sheet,
     SheetClose,
@@ -8,7 +6,7 @@ import {
     SheetDescription,
     SheetTitle,
   } from "@/components/ui/sheet"
-import { memo, useMemo, FC, ReactNode, useCallback, useState } from "react"
+import { memo, useMemo, FC, useCallback, useState } from "react"
 import { getDictionary } from "@/dictionaries";
 import { Toggle } from "@radix-ui/react-toggle";
 import { Menu as MenuIcon } from "lucide-react"

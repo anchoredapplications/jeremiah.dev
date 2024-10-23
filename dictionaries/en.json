@@ -3,7 +3,6 @@
         "toggle": "Toggle theme",
         "light": "light",
         "dark": "dark",
-        "dev": "developer",
         "system": "system",
         "keys": {"light": "light", "dark": "dark", "dev": "dev"}
     },
@@ -42,7 +41,12 @@
         "id": "projects",
         "heading": "projects",
         "description": "A showcase of personal, published projects.",
-        "placeholder": "P R O J E C T"
+        "placeholder": "P R O J E C T",
+        "github": {
+            "link": "Github",
+            "public": "View source on Github.",
+            "private": "This repository is private."
+        }
     },
     "contact": {
         "id": "contact",

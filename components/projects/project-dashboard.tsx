@@ -2,20 +2,18 @@
 import { Project } from "@/types/project";
 import { memo, useMemo, FC, useState, useCallback } from "react"
 import ProjectCardList from "./project-card-list";
-import ProjectViewer from "./project-viewer";
 import { Info as InfoIcon } from "lucide-react"
 import ProjectDrawer from "./project-drawer";
-import { getDictionary } from "@/dictionaries";
 import MobileTabletOnly from "../breakpoints/mobile-tablet-only";
 import DesktopOnly from "../breakpoints/desktop-only";
+import ProjectDisplay from "./project-display";
+import ProjectContent from "./project-content";
 
 interface ProjectDashboardProps {
     projects: Project[];
 }
   
 const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashboardProps) => {
-    const $t = getDictionary();
-
     const [selectedProject, setSelectedProject] = useState<Project>()
     const [isPressed, setIsPressed] = useState<boolean>()
     const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>()
@@ -35,37 +33,37 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
     ), [projects, selectProject]);
     
     // Memoized component
-    const projectViewer = useMemo(() => (
-        <ProjectViewer project={selectedProject} />
-    ), [selectedProject]);
-
-    // Memoized component
-    const projectDrawer = useMemo(() => {
-        if (selectedProject) {
-            return (
-                <ProjectDrawer openState={!!isDrawerOpen} setIsOpen={setIsDrawerOpen}>
-                    { projectViewer }
-                </ProjectDrawer>
-            )
-        }
-    }, [selectedProject, projectViewer, setIsDrawerOpen, isDrawerOpen]);
-
-    // Memoized component
     const content = useMemo(() => (
         <div className="max-h-page-content w-full flex flex-col overflow-hidden rounded-md bg-dashboard shadow-inner border dark:border-border">
             <div className="min-h-14 p-4 flex flex-row-reverse bg-dashboard-header border-b border-dashboard-header shadow-xl dark:border-border">
                 <InfoIcon onClick={togglePressed} className={`cursor-pointer ${isPressed ? "text-neutral-700" : "text-neutral-900"}`}/>
             </div>
             {/* Desktop View */}
-            <div className="flex px-2">
-                {cardList}
-                <div className="hidden w-full pl-6 lg:flex">
-                    <DesktopOnly>{projectViewer}</DesktopOnly>
-                    <MobileTabletOnly>{projectDrawer}</MobileTabletOnly>
+            <DesktopOnly>
+                <div className="h-dashboard-content w-full flex gap-4 p-2">
+                    <div className="h-full">
+                        <ProjectCardList projects={projects} handleClick={selectProject} />
+                    </div>
+                    <div className="h-3/4 w-full xl:h-full">
+                        <ProjectDisplay project={selectedProject}/>
+                    </div>
+                    <div className="w-full p-2 xl:w-1/3">
+                        <ProjectContent project={selectedProject} />
+                    </div>
                 </div>
-            </div>
+            </DesktopOnly>
+            {/* Mobile & Tablet View */}
+            <MobileTabletOnly>
+                <ProjectCardList projects={projects} handleClick={selectProject} />
+                <ProjectDrawer openState={!!isDrawerOpen} setIsOpen={setIsDrawerOpen}>
+                    <div className="h-dashboard-content w-full flex py-2 gap-4 flex-col">
+                        <ProjectDisplay project={selectedProject}/>
+                        <ProjectContent project={selectedProject} />
+                    </div>
+                </ProjectDrawer>
+            </MobileTabletOnly>
         </div>
-    ), [cardList, projectDrawer, projectViewer, isPressed, togglePressed]);
+    ), [selectedProject, cardList, isDrawerOpen, isPressed, selectProject, setIsDrawerOpen, togglePressed]);
 
     return (content);
 };

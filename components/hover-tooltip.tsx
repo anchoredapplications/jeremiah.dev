@@ -11,14 +11,15 @@ import {
 
 export type TooltipProps = {
     children: ReactNode | ReactNode[],
-    tooltip: ReactNode | ReactNode[]
+    tooltip: ReactNode | ReactNode[],
+    className?: string,
 }
 
-export function Tooltip({ children, tooltip }: TooltipProps) {
+export function Tooltip({ children, tooltip, className }: TooltipProps) {
     return (
         <TooltipProvider>
             <TooltipBase>
-                <TooltipTrigger>
+                <TooltipTrigger className={className}>
                     {children}
                 </TooltipTrigger>
                 <TooltipContent>
