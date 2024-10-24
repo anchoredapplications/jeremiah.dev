@@ -11,6 +11,10 @@
         "heading":"jeremiah.dev",
         "description":"Links to all sections of the site."
     },
+    "controls": {
+        "linkedIn": "View LinkedIn Profile (new tab)",
+        "resume": "View Resume (new tab)"
+    },
     "navigation": [
         {"id": "home", "heading":"home"},
         {"id": "career", "heading":"career"},
@@ -79,5 +83,9 @@
     },
     "footer": {
         "copyright": "Jeremiah D. Gage. All Rights Reserved."
+    },
+    "links": {
+        "linkedIn" : "https://www.linkedin.com/in/jeremiah-gage/",
+        "resume" : "https://drive.google.com/file/d/1N1eFi1nTgmo0eZBhFCG_-oVyMJmiD2tY/view"
     }
 }

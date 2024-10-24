@@ -41,7 +41,7 @@ const ProjectContent: FC<ProjectContentProps> = ({ project }: ProjectContentProp
 
     // Memoized component
     const content = useMemo(() => project && (
-        <div className="flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4">
             <div className="flex justify-between items-end">
                 <h1 className="text-4xl font-tight font-serif">{project.name}</h1>
                 { project && link }
@@ -49,7 +49,7 @@ const ProjectContent: FC<ProjectContentProps> = ({ project }: ProjectContentProp
             <p>
                 {project.description}
             </p>
-            <div className="flex flex-wrap justify-around gap-4">
+            <div className="w-full flex flex-wrap justify-around gap-4">
                 <h1 className="text-2xl text-center font-tight font-serif w-full">{$t.projects.languages}</h1>
                 { languages }
             </div>

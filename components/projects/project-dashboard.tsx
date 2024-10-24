@@ -37,7 +37,7 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
     
     // Memoized component
     const content = useMemo(() => (
-        <div className="max-h-page-content w-full flex flex-col overflow-hidden rounded-md bg-dashboard shadow-inner border dark:border-border">
+        <div className="max-h-page-content p-4 w-full flex flex-col overflow-hidden rounded-md bg-dashboard shadow-inner border dark:border-border">
             <div className="min-h-14 p-4 flex flex-row-reverse bg-dashboard-header border-b border-dashboard-header shadow-xl dark:border-border">
                 <ClickTooltip tooltip={$t.projects.info} className="font-serif tracking-tight">
                     <InfoIcon onClick={togglePressed} className={`cursor-pointer ${isPressed ? "text-neutral-700" : "text-neutral-900"}`}/>
@@ -47,14 +47,14 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
             <div className="h-dashboard-content">
                 <DesktopOnly>
                     <div className="h-dashboard-content w-full flex gap-4 p-2">
-                        <div className="h-full lg:w-80 xl:w-96">
+                        <div className="h-full lg:w-80 xl:w-dashboard-pane xl:min-w-dashboard-pane">
                             <ProjectCardList projects={projects} handleClick={selectProject} />
                         </div>
                         <div className="w-full flex flex-col gap-4 xl:flex-row">
                             <div className="h-3/4 w-full xl:h-full">
                                 <ProjectDisplay project={selectedProject}/>
                             </div>
-                            <div className="w-full xl:w-96">
+                            <div className="w-full xl:w-dashboard-pane xl:min-w-dashboard-pane">
                                 <ProjectContent project={selectedProject} />
                             </div>
                         </div>

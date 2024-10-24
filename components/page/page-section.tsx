@@ -66,7 +66,7 @@ const PageSection: FC<PageSectionProps> = ({children, variant, id, showBorder}: 
     const section = useMemo(() => (
         <section id={id} className={`relative w-full flex flex-col h-full min-h-screen ${getCSSForVariant(variant)}`}>
             { showBorder && border}
-            <div className="z-10 p-4 h-full w-full flex flex-col flex-grow">
+            <div className="z-10 h-full w-full flex flex-col flex-grow">
                 {children}
             </div>
         </section>

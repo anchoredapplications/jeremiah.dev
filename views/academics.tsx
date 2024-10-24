@@ -22,7 +22,7 @@ export default async function Academics() {
     <PageSection id={$t.academics.id} variant={PageSectionVariant.Primary} showBorder={true}>
       <PageSectionHeader>{$t.academics.heading}</PageSectionHeader>
       <PageSectionContent>
-        <main className='w-full font-serif flex flex-col gap-6 lg:w-3/4'>
+        <div className='w-full font-serif flex flex-col gap-6 lg:w-3/4'>
           {/* Degree */}
           <span className='flex justify-between'>
             <span className='flex flex-col'>
@@ -46,7 +46,7 @@ export default async function Academics() {
               <Focus focus={academics.focuses[1]}/>
             </div>
           </div>
-        </main>
+        </div>
         <CommendationList commendations={academics.commendations || []} />
       </PageSectionContent>
     </PageSection>

@@ -13,17 +13,5 @@
         "org": "anchoredapplications",
         "api": "https://api.github.com",
         "repos": "/orgs/anchoredapplications/repos"
-    },
-    "linkedIn": {
-        "url" : "https://www.linkedin.com/in/jeremiah-gage/",
-        "path": {
-            "grouping": "experience__list",
-            "item":  "profile-section-card",
-            "title": "experience-item__title",
-            "employer": "experience-item__subtitle",
-            "dateRange": "experience-item__meta-item",
-            "location": "experience-item__meta-item",
-            "description": "experience-item__meta-item"
-        }
     }
 }

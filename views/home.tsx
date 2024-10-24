@@ -11,9 +11,7 @@ export default function Home() {
   return (
     <PageSection id={$t.home.id} variant={PageSectionVariant.Primary}>
       <PageSectionContent>
-          <DevNote note="Hello!">
-            <TypeHeading stack={$t.home.typeHeading} className="w-full h-full flex flex-col justify-center items-center h-screen"/>
-          </DevNote>
+          <TypeHeading stack={$t.home.typeHeading} className="w-full h-full flex flex-col justify-center items-center h-screen"/>
       </PageSectionContent>
     </PageSection>
   );

@@ -19,12 +19,12 @@ const CircularProgress = React.forwardRef<
     strokeWidth?: number; // Adjust the stroke width
     size?: 'normal' | 'lg' | 'xl'; // Size prop
   }
->(({ value, subtitle, className, strokeWidth = 10, size = 'normal', ...props }, ref) => {
+>(({ value, subtitle, className, strokeWidth = 16, size = 'normal', ...props }, ref) => {
   // Define sizes based on the size prop
   const sizes = {
-    normal: 110, // Normal size remains 120px
-    lg: 140,     // lg size is now 140px
-    xl: 160,     // 180px for xl size
+    normal: 130,
+    lg: 150,
+    xl: 170
   };
 
   const circleSize = sizes[size]; // Get the size based on the prop
@@ -51,22 +51,30 @@ const CircularProgress = React.forwardRef<
       style={{ width: circleSize, height: circleSize }} // Fixed size
     >
       <span className="absolute flex flex-col w-full h-full justify-center items-center font-mono tracking-tight">
-        <h1 className="text-3xl md:text-xl lg:text-2xl xl:text-3xl">{validValue}%</h1>
-        <h2 className="text-xl md:text-md lg:text-md xl:text-lg">{subtitle}</h2>
+        <h1 className="text-3xl md:text-xl">{validValue}%</h1>
+        <h2 className="text-xl md:text-sm">{subtitle}</h2>
       </span>
       <svg width="100%" height="100%">
         <circle
+          stroke="black" // Light gray border color
+          fill="transparent"
+          strokeWidth={strokeWidth} // Bolder border
+          r={radius} // Adjust radius to fit border
+          cx="50%"
+          cy="50%"
+        />
+        <circle
           stroke="#e6e6e6" // Light gray border color
           fill="transparent"
-          strokeWidth={strokeWidth + 2} // Bolder border
-          r={radius + 1} // Adjust radius to fit border
+          strokeWidth={strokeWidth - 1} // Bolder border
+          r={radius - 1} // Adjust radius to fit border
           cx="50%"
           cy="50%"
         />
         <circle
           fill="transparent"
-          strokeWidth={strokeWidth} // Width for progress stroke
-          r={radius} // Normal radius
+          strokeWidth={strokeWidth - 1} // Width for progress stroke
+          r={radius - 1} // Normal radius
           cx="50%"
           cy="50%"
           strokeDasharray={circumference} // Full circumference
