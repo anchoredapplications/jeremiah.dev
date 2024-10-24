@@ -1,11 +1,12 @@
 import { getDictionary } from "@/dictionaries";
-import { memo, useMemo, FC, ReactNode } from "react"
+import { memo, useMemo, FC, ReactNode, useCallback } from "react"
 import {
     Drawer,
     DrawerContent,
     DrawerDescription,
     DrawerTitle,
 } from "@/components/ui/drawer"
+import ProjectDrawerButton from "./project-drawer-button";
 
 interface ProjectDrawerProps {
     openState: boolean;
@@ -15,14 +16,18 @@ interface ProjectDrawerProps {
   
 const ProjectDrawer: FC<ProjectDrawerProps> = ({ openState, children, setIsOpen }: ProjectDrawerProps) => {
     const $t = getDictionary();
+    const handleClose = useCallback(()=> {
+        setIsOpen(false)
+    }, [setIsOpen])
 
     // Memoized component
     const content = useMemo(() => (
         <Drawer open={openState} onOpenChange={setIsOpen}>
             <DrawerTitle className="sr-only">{$t.projects.heading}</DrawerTitle>
             <DrawerDescription className="sr-only">{$t.projects.description}</DrawerDescription>
-            <DrawerContent className="h-3/4 p-4">
+            <DrawerContent className="h-full p-4 md:h-3/4">
                 {children}
+                <ProjectDrawerButton handleClick={handleClose}>{$t.projects.closeDemo}</ProjectDrawerButton>
             </DrawerContent>
         </Drawer>
     ), [children, openState, setIsOpen, $t]);

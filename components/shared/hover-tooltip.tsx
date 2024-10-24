@@ -15,7 +15,7 @@ export type TooltipProps = {
     className?: string,
 }
 
-export function Tooltip({ children, tooltip, className }: TooltipProps) {
+export function HoverTooltip({ children, tooltip, className }: TooltipProps) {
     return (
         <TooltipProvider>
             <TooltipBase>

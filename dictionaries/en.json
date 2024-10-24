@@ -41,6 +41,7 @@
         "id": "projects",
         "heading": "projects",
         "description": "A showcase of personal, published projects.",
+        "info": "This dashboard pulls projects from my Github organization via the Github Public API.",
         "placeholder": "P R O J E C T",
         "viewDemo": "VIEW LIVE DEMO",
         "closeDemo": "Close",

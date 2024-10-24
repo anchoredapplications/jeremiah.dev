@@ -3,7 +3,7 @@ import { Project } from "@/types/project";
 import { memo, useMemo, FC, useState, useCallback, useEffect } from "react"
 import { GitBranch, Lock } from "lucide-react"
 import { twMerge } from "tailwind-merge";
-import { Tooltip } from "../shared/hover-tooltip";
+import { HoverTooltip } from "../shared/hover-tooltip";
 import ScalingProgressCircle from "../shared/scaling-progress-circle";
 
 interface ProjectContentProps {
@@ -18,18 +18,18 @@ const ProjectContent: FC<ProjectContentProps> = ({ project }: ProjectContentProp
     const link = useMemo(() => (
         project?.private 
             ? (
-                <Tooltip tooltip={$t.projects.github.private} className={twMerge(linkStyle, "opacity-40")}>
+                <HoverTooltip tooltip={$t.projects.github.private} className={twMerge(linkStyle, "opacity-40")}>
                     {$t.projects.github.link}
                     <Lock />
-                </Tooltip>
+                </HoverTooltip>
               )
             : (
-                <Tooltip tooltip={$t.projects.github.public}>
+                <HoverTooltip tooltip={$t.projects.github.public}>
                     <a href={project?.link.href} target="_blank" className={twMerge(linkStyle, "hover:underline")}>
                         {$t.projects.github.link}
                         <GitBranch />
                     </a>
-                </Tooltip>
+                </HoverTooltip>
             )
     ), [$t, project]);
 

@@ -8,12 +8,15 @@ import MobileTabletOnly from "../breakpoints/mobile-tablet-only";
 import DesktopOnly from "../breakpoints/desktop-only";
 import ProjectDisplay from "./project-display";
 import ProjectContent from "./project-content";
+import { getDictionary } from "@/dictionaries";
+import { ClickTooltip } from "../shared/click-tooltip";
 
 interface ProjectDashboardProps {
     projects: Project[];
 }
   
 const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashboardProps) => {
+    const $t = getDictionary();
     const [selectedProject, setSelectedProject] = useState<Project>()
     const [isPressed, setIsPressed] = useState<boolean>()
     const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>()
@@ -36,7 +39,9 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
     const content = useMemo(() => (
         <div className="max-h-page-content w-full flex flex-col overflow-hidden rounded-md bg-dashboard shadow-inner border dark:border-border">
             <div className="min-h-14 p-4 flex flex-row-reverse bg-dashboard-header border-b border-dashboard-header shadow-xl dark:border-border">
-                <InfoIcon onClick={togglePressed} className={`cursor-pointer ${isPressed ? "text-neutral-700" : "text-neutral-900"}`}/>
+                <ClickTooltip tooltip={$t.projects.info} className="font-serif tracking-tight">
+                    <InfoIcon onClick={togglePressed} className={`cursor-pointer ${isPressed ? "text-neutral-700" : "text-neutral-900"}`}/>
+                </ClickTooltip>
             </div>
             {/* Desktop View */}
             <div className="h-dashboard-content">
