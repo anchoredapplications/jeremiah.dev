@@ -30,7 +30,7 @@ const ProjectDrawer: FC<ProjectDrawerProps> = ({ openState, children, setIsOpen 
                 <ProjectDrawerButton handleClick={handleClose}>{$t.projects.closeDemo}</ProjectDrawerButton>
             </DrawerContent>
         </Drawer>
-    ), [children, openState, setIsOpen, $t]);
+    ), [$t, children, openState, setIsOpen, handleClose]);
 
     return (content);
 };

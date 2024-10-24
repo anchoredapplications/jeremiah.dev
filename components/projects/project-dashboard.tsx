@@ -72,7 +72,7 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
                 </MobileTabletOnly>
             </div>
         </div>
-    ), [projects, selectedProject, isDrawerOpen, isPressed, selectProject, setIsDrawerOpen, togglePressed]);
+    ), [$t, projects, selectedProject, isDrawerOpen, isPressed, selectProject, setIsDrawerOpen, togglePressed]);
 
     return (content);
 };
