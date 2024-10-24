@@ -8,6 +8,7 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import ProjectAvatar from "./project-avatar";
+import HoverBadgeList from "../shared/hover-badge-list";
 
 interface ProjectCardProps {
     project: Project;
@@ -15,24 +16,28 @@ interface ProjectCardProps {
 }
   
 const ProjectCard: FC<ProjectCardProps> = ({ project, handleClick }: ProjectCardProps) => {
+    const badges = project.topics?.map(el =>({ subtitle: el}))
+
     const onSelect = useCallback(()=>{
         handleClick(project)
     }, [handleClick, project])
+
     // Memoized component
     const content = useMemo(() => (
-        <Card onClick={onSelect} className="rounded-xl mb-2 w-full lg:w-80 hover:cursor-pointer hover:shadow-outer">
+        <Card onClick={onSelect} className="rounded-xl mb-2 w-full hover:cursor-pointer hover:shadow-outer">
             <CardHeader>
                 <CardTitle>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between tracking-tight font-mono gap-2">
                         {project.name}    
                         <ProjectAvatar icon={project.icon}/> 
                     </div>
                 </CardTitle>
                 <CardDescription>{project.description}</CardDescription>
+                <HoverBadgeList badges={badges}/>
             </CardHeader>
             <CardFooter />
         </Card>
-    ), [project, onSelect]);
+    ), [project, onSelect, badges]);
 
     return (content);
 };

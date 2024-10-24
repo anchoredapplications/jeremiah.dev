@@ -42,6 +42,9 @@
         "heading": "projects",
         "description": "A showcase of personal, published projects.",
         "placeholder": "P R O J E C T",
+        "viewDemo": "VIEW LIVE DEMO",
+        "closeDemo": "Close",
+        "languages": "languages",
         "github": {
             "link": "Github",
             "public": "View source on Github.",

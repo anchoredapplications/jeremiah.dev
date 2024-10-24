@@ -92,6 +92,7 @@ async function LoadGitHubRepositories() {
 
 async function LoadGitHubProjects() {
     const repositories = await GetGitHubRepositories();
+
     const getPublicRepoImage = (repo: InternalGithubProject) => `${repo.html_url}/blob/main/thumbnail.png?raw=true`;
     const getPrivateRepoImage = async (repo: InternalGithubProject) => {
         const response = await octokit.request(repo.contents_url, {
@@ -99,10 +100,15 @@ async function LoadGitHubProjects() {
         }).catch(console.log);
         return `data:image/png;base64,${response?.data?.content}`;
     };
+    const getLanguages = async (repo: InternalGithubProject) => {
+        const response = await octokit.request(repo.languages_url).catch(console.log);
+        return response?.data;
+    };
     
     const projects = await Promise.all(repositories.value.map(async (el: GithubRepository) => ({
         ...el,
-        image: el.private? await getPrivateRepoImage(el) : getPublicRepoImage(el)
+        image: el.private? await getPrivateRepoImage(el) : getPublicRepoImage(el),
+        languages: await getLanguages(el)
     })));
 
     GITHUB_PROJECTS.value = projects;

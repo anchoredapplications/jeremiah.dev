@@ -1,6 +1,6 @@
 import PageSection from "@/components/page/page-section";
 import { PageSectionVariant } from '@/types/page';
-import TypeHeading from "@/components/type-heading";
+import TypeHeading from "@/components/shared/type-heading";
 import { getDictionary } from '@/dictionaries';
 import DevNote from "@/components/developer/dev-note";
 import PageSectionContent from "@/components/page/page-section-content";

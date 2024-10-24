@@ -8,15 +8,15 @@ interface CommendationProps {
 
 const Commendation: FC<CommendationProps> = ({ commendation }: CommendationProps) => {
     const component = useMemo(() => (
-        <div className="flex flex-col items-center justify-center">
-            <ComponentOf jsx={commendation.image} style="w-32 h-32" />
-            <h4 className="font-bold">    
+        <div className="flex flex-col items-center justify-center tracking-tight text-lg lg:text-xl xl:text-2xl">
+            <ComponentOf jsx={commendation.image} style="aspect-square w-32 lg:w-40 xl:w-48" />
+            <h4 className="font-bold font-mono">    
                 {commendation.title}
             </h4>
-            <h5 className="font-light">    
+            <h5 className="font-light font-serif">    
                 {commendation.subtitle}
             </h5>
-            <h5 className="font-semibold">    
+            <h5 className="font-semibold font-serif">    
                 {commendation.dates}
             </h5>
         </div>

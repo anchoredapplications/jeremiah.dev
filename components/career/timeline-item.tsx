@@ -5,7 +5,7 @@ import { FC, memo, useMemo } from "react"
 import EventBubble from "./event-bubble"
 import { Job } from "@/types/job"
 import { ComponentOf } from "../utility/componentOf"
-import SkillBadgeList from "./skill-badge-list"
+import HoverBadgeList from "../shared/hover-badge-list"
 
 interface TimelineItem {
     event: Job
@@ -31,7 +31,7 @@ const TimelineItem: FC<TimelineItem> = ({event, firstItem, lastItem}: TimelineIt
                 </div>
                 <div className="flex flex-col">
                     <hr className="mb-4"></hr>
-                    <SkillBadgeList skills={event.skills}/>
+                    <HoverBadgeList badges={event.skills}/>
                 </div>
             </div>
         </li>

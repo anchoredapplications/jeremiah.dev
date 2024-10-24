@@ -22,24 +22,24 @@ export default async function Academics() {
     <PageSection id={$t.academics.id} variant={PageSectionVariant.Primary} showBorder={true}>
       <PageSectionHeader>{$t.academics.heading}</PageSectionHeader>
       <PageSectionContent>
-        <main className='w-3/4'>
+        <main className='w-full font-serif flex flex-col gap-6 lg:w-3/4'>
           {/* Degree */}
           <span className='flex justify-between'>
             <span className='flex flex-col'>
-              <h2 className='text-2xl'>
+              <h2 className='text-2xl lg:text-3xl xl:text-4xl'>
                 {academics.degree}
               </h2>
-              <h3 className='text-xl font-light'>
+              <h3 className='text-xl font-light lg:text-2xl xl:text-3xl'>
                 {academics.institution}
               </h3>
             </span>
-            <h3 className='text-xl font-light'>
-              {academics.startDate}-{academics.endDate}
+            <h3 className='text-xl font-light lg:text-2xl xl:text-3xl'>
+              {academics.startDate} - {academics.endDate}
             </h3>
           </span>
           {/* Focuses */}
           <div className="flex flex-col text-start md:grid md:grid-cols-2  md:flex-row">
-            <div className="flex  border-gray-300 md:pr-2 md:border-r">
+            <div className="flex border-gray-300 md:pr-2 md:border-r">
               <Focus focus={academics.focuses[0]}/>
             </div>
             <div className="flex md:pl-2">

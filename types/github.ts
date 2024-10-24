@@ -1,4 +1,5 @@
 import { Endpoints } from "@octokit/types";
+import { Languages } from "./languages";
 
 export interface SimpleCache<T> {
     value: T[], 
@@ -11,7 +12,10 @@ export type GithubDocument = Endpoints["GET /repos/{owner}/{repo}/contents/{path
 
 export type GithubLanguages = Endpoints["GET /repos/{owner}/{repo}/languages"]["response"]["data"];
 
-export type InternalGithubProject = GithubRepository & { image?: string };
+export type InternalGithubProject = GithubRepository & { 
+    image?: string 
+    languages?: Languages
+};
 
 export interface InternalGithubDocument {
     key: string,

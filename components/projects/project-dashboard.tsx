@@ -39,31 +39,35 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
                 <InfoIcon onClick={togglePressed} className={`cursor-pointer ${isPressed ? "text-neutral-700" : "text-neutral-900"}`}/>
             </div>
             {/* Desktop View */}
-            <DesktopOnly>
-                <div className="h-dashboard-content w-full flex gap-4 p-2">
-                    <div className="h-full">
-                        <ProjectCardList projects={projects} handleClick={selectProject} />
+            <div className="h-dashboard-content">
+                <DesktopOnly>
+                    <div className="h-dashboard-content w-full flex gap-4 p-2">
+                        <div className="h-full lg:w-80 xl:w-96">
+                            <ProjectCardList projects={projects} handleClick={selectProject} />
+                        </div>
+                        <div className="w-full flex flex-col gap-4 xl:flex-row">
+                            <div className="h-3/4 w-full xl:h-full">
+                                <ProjectDisplay project={selectedProject}/>
+                            </div>
+                            <div className="w-full xl:w-96">
+                                <ProjectContent project={selectedProject} />
+                            </div>
+                        </div>
                     </div>
-                    <div className="h-3/4 w-full xl:h-full">
-                        <ProjectDisplay project={selectedProject}/>
-                    </div>
-                    <div className="w-full p-2 xl:w-1/3">
-                        <ProjectContent project={selectedProject} />
-                    </div>
-                </div>
-            </DesktopOnly>
-            {/* Mobile & Tablet View */}
-            <MobileTabletOnly>
-                <ProjectCardList projects={projects} handleClick={selectProject} />
-                <ProjectDrawer openState={!!isDrawerOpen} setIsOpen={setIsDrawerOpen}>
-                    <div className="h-dashboard-content w-full flex py-2 gap-4 flex-col">
-                        <ProjectDisplay project={selectedProject}/>
-                        <ProjectContent project={selectedProject} />
-                    </div>
-                </ProjectDrawer>
-            </MobileTabletOnly>
+                </DesktopOnly>
+                {/* Mobile & Tablet View */}
+                <MobileTabletOnly>
+                    <ProjectCardList projects={projects} handleClick={selectProject} />
+                    <ProjectDrawer openState={!!isDrawerOpen} setIsOpen={setIsDrawerOpen}>
+                        <div className="h-dashboard-content w-full flex py-2 gap-4 flex-col">
+                            <ProjectDisplay project={selectedProject}/>
+                            <ProjectContent project={selectedProject} />
+                        </div>
+                    </ProjectDrawer>
+                </MobileTabletOnly>
+            </div>
         </div>
-    ), [selectedProject, cardList, isDrawerOpen, isPressed, selectProject, setIsDrawerOpen, togglePressed]);
+    ), [projects, selectedProject, isDrawerOpen, isPressed, selectProject, setIsDrawerOpen, togglePressed]);
 
     return (content);
 };
