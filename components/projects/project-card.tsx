@@ -24,7 +24,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, handleClick }: ProjectCard
 
     // Memoized component
     const content = useMemo(() => (
-        <Card onClick={onSelect} className="rounded-xl mb-2 w-full hover:cursor-pointer hover:shadow-outer">
+        <Card onClick={onSelect} className="rounded-xl my-4 w-full hover:cursor-pointer hover:shadow-outer">
             <CardHeader>
                 <CardTitle>
                     <div className="flex items-center justify-between tracking-tight font-mono gap-2">

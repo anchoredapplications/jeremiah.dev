@@ -2,7 +2,6 @@ import * as React from "react";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 import { cn } from "@/lib/utils";
 
-// Function to generate a vibrant random color
 const getRandomVibrantColor = () => {
   let colors = [256, 256, 0, 0]
   colors.sort(() => Math.random() - 0.5);
@@ -13,32 +12,27 @@ const getRandomVibrantColor = () => {
   };
 };
 
-
 const CircularProgress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
   {
-    value: number; // Progress value (0-100)
+    value: number;
     subtitle: string;
     className?: string;
-    strokeWidth?: number; // Adjust the stroke width
+    strokeWidth?: number;
     size?: 'normal' | 'lg' | 'xl'; // Size prop
   }
 >(({ value, subtitle, className, strokeWidth = 16, size = 'normal', ...props }, ref) => {
-  // Define sizes based on the size prop
   const sizes = {
     normal: 130,
     lg: 150,
     xl: 170
   };
 
-  const circleSize = sizes[size]; // Get the size based on the prop
-  const radius = (circleSize - strokeWidth) / 2; // Calculate radius
+  const circleSize = sizes[size];
+  const radius = (circleSize - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
-  // Clamp value between 0 and 100
   const validValue = Math.max(0, Math.min(100, value));
   const offset = circumference - (validValue / 100) * circumference;
-  
-  // Generate vibrant colors for the gradient
   const {start: progressColorStart, end: progressColorEnd, id} = getRandomVibrantColor()
 
   return (

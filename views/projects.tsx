@@ -19,7 +19,9 @@ export default async function Projects() {
     <PageSection id={$t.projects.id} variant={PageSectionVariant.Secondary}>
       <PageSectionHeader>{$t.projects.heading}</PageSectionHeader>
       <PageSectionContent>
+        <div className="w-full h-full p-4">
           <ProjectDashboard projects={projects}/>
+        </div>
       </PageSectionContent>
     </PageSection>
   );
