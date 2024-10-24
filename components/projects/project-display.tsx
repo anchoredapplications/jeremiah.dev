@@ -8,6 +8,7 @@ import { Button } from "../ui/button";
 import ProjectDrawerButton from "./project-drawer-button";
 
 interface ProjectDisplayProps {
+    skeleton?: boolean;
     project?: Project;
 }
   

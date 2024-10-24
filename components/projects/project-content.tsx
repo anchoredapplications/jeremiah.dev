@@ -1,12 +1,13 @@
 import { getDictionary } from "@/dictionaries";
 import { Project } from "@/types/project";
-import { memo, useMemo, FC, useState, useCallback, useEffect } from "react"
+import { memo, useMemo, FC } from "react"
 import { GitBranch, Lock } from "lucide-react"
 import { twMerge } from "tailwind-merge";
 import { HoverTooltip } from "../shared/hover-tooltip";
 import ScalingProgressCircle from "../shared/scaling-progress-circle";
 
 interface ProjectContentProps {
+    skeleton?: boolean;
     project?: Project;
 }
   

@@ -7,7 +7,7 @@ import { getDictionary } from '@/dictionaries';
 import { Toggle } from "../ui/toggle";
 
 interface ThemeToggleProps {
-  className: string;
+  className?: string;
 }
 
 const ThemeToggle: FC<ThemeToggleProps> = ({className}: ThemeToggleProps) => {
@@ -28,8 +28,8 @@ const ThemeToggle: FC<ThemeToggleProps> = ({className}: ThemeToggleProps) => {
   const toggle = useMemo(() => (
     <Toggle className={`aspect-square ${className}`} aria-label={$t.theme.toggle} pressed={isPressed} onPressedChange={setChangeTheme}>
       { isPressed 
-        ? <Moon className="h-[1.2rem] w-[1.2rem]" />
-        : <Sun className="h-[1.2rem] w-[1.2rem]" />
+        ? <Moon className="h-[1.4rem] w-[1.4rem]" />
+        : <Sun className="h-[1.4rem] w-[1.4rem]" />
       }
     </Toggle>
   ), [$t, isPressed, setChangeTheme, className]);

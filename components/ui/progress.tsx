@@ -3,12 +3,16 @@ import * as ProgressPrimitive from "@radix-ui/react-progress";
 import { cn } from "@/lib/utils";
 
 // Function to generate a vibrant random color
-const getVibrantColor = () => {
-  const h = Math.floor(Math.random() * 360);
-  const s = 100; // Saturation at 100% for vibrant colors
-  const l = Math.floor(Math.random() * 30 + 40); // Lightness between 40% and 70%
-  return `hsl(${h}, ${s}%, ${l}%)`;
+const getRandomVibrantColor = () => {
+  let colors = [256, 256, 0, 0]
+  colors.sort(() => Math.random() - 0.5);
+  return { 
+    start: `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`, 
+    end: `rgb(${colors[1]}, ${colors[2]}, ${colors[3]})`, 
+    id:[...Array(8)].map(() => Math.floor(Math.random() * 16).toString(16)).join(''),
+  };
 };
+
 
 const CircularProgress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
@@ -30,14 +34,12 @@ const CircularProgress = React.forwardRef<
   const circleSize = sizes[size]; // Get the size based on the prop
   const radius = (circleSize - strokeWidth) / 2; // Calculate radius
   const circumference = 2 * Math.PI * radius;
-
   // Clamp value between 0 and 100
   const validValue = Math.max(0, Math.min(100, value));
   const offset = circumference - (validValue / 100) * circumference;
-
+  
   // Generate vibrant colors for the gradient
-  const progressColorStart = getVibrantColor();
-  const progressColorEnd = getVibrantColor();
+  const {start: progressColorStart, end: progressColorEnd, id} = getRandomVibrantColor()
 
   return (
     <ProgressPrimitive.Root
@@ -46,46 +48,39 @@ const CircularProgress = React.forwardRef<
       aria-valuenow={validValue}
       aria-valuemin={0}
       aria-valuemax={100}
-      className={cn("relative", className, "shadow-lg rounded-full")} // Add shadow and rounded corners
+      className={cn("relative", className, "rounded-full")} // Add shadow and rounded corners
       {...props}
       style={{ width: circleSize, height: circleSize }} // Fixed size
     >
       <span className="absolute flex flex-col w-full h-full justify-center items-center font-mono tracking-tight">
-        <h1 className="text-3xl md:text-xl">{validValue}%</h1>
-        <h2 className="text-xl md:text-sm">{subtitle}</h2>
+        <h1 className="text-2xl md:text-xl">{validValue}%</h1>
+        <h2 className="text-md md:text-sm">{subtitle}</h2>
       </span>
       <svg width="100%" height="100%">
         <circle
-          stroke="black" // Light gray border color
+          stroke="#e1e1e1" // Light gray border color
           fill="transparent"
-          strokeWidth={strokeWidth} // Bolder border
-          r={radius} // Adjust radius to fit border
-          cx="50%"
-          cy="50%"
-        />
-        <circle
-          stroke="#e6e6e6" // Light gray border color
-          fill="transparent"
-          strokeWidth={strokeWidth - 1} // Bolder border
-          r={radius - 1} // Adjust radius to fit border
+          strokeWidth={strokeWidth-1} // Bolder border
+          r={radius-1} // Adjust radius to fit border
           cx="50%"
           cy="50%"
         />
         <circle
           fill="transparent"
-          strokeWidth={strokeWidth - 1} // Width for progress stroke
-          r={radius - 1} // Normal radius
+          strokeWidth={strokeWidth+1} // Width for progress stroke
+          r={radius-1} // Normal radius
           cx="50%"
           cy="50%"
           strokeDasharray={circumference} // Full circumference
           strokeDashoffset={offset} // Offset based on the value
-          stroke={`url(#gradient)`} // Reference the gradient
+          stroke={`url(#progress-circle-${id})`} // Reference the gradient
           style={{
             transition: 'stroke-dashoffset 0.5s ease-in-out',
           }}
+          className="shadow-xl"
         />
         <defs>
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id={`progress-circle-${id}`} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor={progressColorStart} />
             <stop offset="100%" stopColor={progressColorEnd} />
           </linearGradient>

@@ -13,6 +13,8 @@ import { Menu as MenuIcon } from "lucide-react"
 import Link from "next/link";
 import ThemeToggle from "../theme/theme-toggle";
 import { useTheme } from "next-themes";
+import LinkedIn from "./linked-in";
+import Resume from "./resume";
 
 export interface BaseOptionProps {
     href: string;
@@ -75,7 +77,11 @@ const Menu: FC<MenuProps> = () => {
                         {MenuToggle}
                     </SheetTitle>
                 </SheetClose>
-                <ThemeToggle className="absolute right-0 bottom-0"/>
+                <span className="flex items-center absolute right-0 bottom-0">
+                    <LinkedIn className="px-3"/>
+                    <Resume/>
+                    <ThemeToggle />
+                </span>
             </SheetContent>
         </Sheet>
     ), [$t, MenuToggle, Navigation, isPressed]);

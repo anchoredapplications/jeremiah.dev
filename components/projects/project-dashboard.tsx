@@ -10,6 +10,8 @@ import ProjectDisplay from "./project-display";
 import ProjectContent from "./project-content";
 import { getDictionary } from "@/dictionaries";
 import { ClickTooltip } from "../shared/click-tooltip";
+import { Skeleton } from "../ui/skeleton";
+import { Skeletons } from "../breakpoints/Skeletons";
 
 interface ProjectDashboardProps {
     projects: Project[];
@@ -29,11 +31,6 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
         setIsDrawerOpen(true)
         setSelectedProject(project)
     }, [setSelectedProject, setIsDrawerOpen])
-
-    // Memoized component
-    const cardList = useMemo(() => (
-        <ProjectCardList projects={projects} handleClick={selectProject} />
-    ), [projects, selectProject]);
     
     // Memoized component
     const content = useMemo(() => (
@@ -43,34 +40,27 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
                     <InfoIcon onClick={togglePressed} className={`cursor-pointer ${isPressed ? "text-neutral-700" : "text-neutral-900"}`}/>
                 </ClickTooltip>
             </div>
-            {/* Desktop View */}
-            <div className="h-dashboard-content">
-                <DesktopOnly>
-                    <div className="h-dashboard-content w-full flex gap-4 p-2">
-                        <div className="h-full lg:w-80 xl:w-dashboard-pane xl:min-w-dashboard-pane">
-                            <ProjectCardList projects={projects} handleClick={selectProject} />
-                        </div>
-                        <div className="w-full flex flex-col gap-4 xl:flex-row">
-                            <div className="h-3/4 w-full xl:h-full">
-                                <ProjectDisplay project={selectedProject}/>
-                            </div>
-                            <div className="w-full xl:w-dashboard-pane xl:min-w-dashboard-pane">
-                                <ProjectContent project={selectedProject} />
-                            </div>
-                        </div>
-                    </div>
-                </DesktopOnly>
-                {/* Mobile & Tablet View */}
-                <MobileTabletOnly>
+            <div className="h-dashboard-content w-full flex gap-4">
+                <div className="w-full flex flex-col gap-4 lg:min-w-80 lg:max-w-80 xl:w-dashboard-pane xl:min-w-dashboard-pane">
                     <ProjectCardList projects={projects} handleClick={selectProject} />
-                    <ProjectDrawer openState={!!isDrawerOpen} setIsOpen={setIsDrawerOpen}>
-                        <div className="h-dashboard-content w-full flex py-2 gap-4 flex-col">
-                            <ProjectDisplay project={selectedProject}/>
-                            <ProjectContent project={selectedProject} />
-                        </div>
-                    </ProjectDrawer>
-                </MobileTabletOnly>
+                </div>
+                <div className="h-dashboard-content hidden flex-col gap-4 lg:w-full lg:flex xl:flex-row">
+                    <div className="h-full w-full xl:h-full">
+                        <ProjectDisplay project={selectedProject}/>
+                    </div>
+                    <div className="w-full h-fit h-1/4 xl:h-full xl:w-dashboard-pane xl:min-w-dashboard-pane">
+                        <ProjectContent project={selectedProject} />
+                    </div>
+                </div>
             </div>
+            <MobileTabletOnly>
+                <ProjectDrawer openState={!!isDrawerOpen} setIsOpen={setIsDrawerOpen}>
+                    <div className="h-dashboard-content w-full flex py-2 gap-4 flex-col">
+                        <ProjectDisplay project={selectedProject}/>
+                        <ProjectContent project={selectedProject} />
+                    </div>
+                </ProjectDrawer>
+            </MobileTabletOnly>
         </div>
     ), [$t, projects, selectedProject, isDrawerOpen, isPressed, selectProject, setIsDrawerOpen, togglePressed]);
 

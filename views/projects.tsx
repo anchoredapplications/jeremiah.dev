@@ -19,7 +19,7 @@ export default async function Projects() {
     <PageSection id={$t.projects.id} variant={PageSectionVariant.Secondary}>
       <PageSectionHeader>{$t.projects.heading}</PageSectionHeader>
       <PageSectionContent>
-        <ProjectDashboard projects={projects}/>
+          <ProjectDashboard projects={projects}/>
       </PageSectionContent>
     </PageSection>
   );
