@@ -1,50 +1,33 @@
+import { sendEmail } from '@/server/gateway/email';
+import config from '@/config.json';
+import { ContactFormSchemaType } from '@/types/contact';
 import { NextRequest, NextResponse } from 'next/server'
-// import config from '@/config.json'
-// import { ContactFormSchemaType } from '@/types/contact';
-// const { SESClient, SendEmailCommand } = require("@aws-sdk/client-ses");
+import { getDictionary } from '@/dictionaries';
 
 export async function POST(request: NextRequest) { 
-    // const body = await request.json();
-    // const data = body.email
-    // const awsConfig = {
-    //     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    //     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    //     apiVersion: "2010-12-01",
-    //     region: "us-east-2"
-    // }
-    // const params = {
-    //     Destination: {
-    //         ToAddresses: [
-    //             process.env.SES_RECIPIENT_ADDRESS
-    //         ]
-    //     }, 
-    //     Message: {
-    //         Body: {
-    //             Text: {
-    //                 Charset: "UTF-8", 
-    //                 Data: data.message
-    //             }
-    //         }, 
-    //         Subject: {
-    //             Charset: "UTF-8", 
-    //             Data: `${config}: ${data.subject}`
-    //         }
-    //     }, 
-    //     ReplyToAddresses: [
-    //         data.email
-    //     ], 
-    //     Source: process.env.SES_SENDER_ADDRESS
-    // };
+    const $t = getDictionary();
+
+    const contactFormData: ContactFormSchemaType =  await request.json();
+    const token: string | null  = request.headers.get("token");
     
-    // const client = new SESClient(awsConfig);
-    // const send = new SendEmailCommand(params)
-    // return client.send(send).then(
-    //     (data: ContactFormSchemaType & { $metadata: any}) => {
-    //         if (data.$metadata.httpStatusCode != 200) {
-    //             return NextResponse.json({ message: "Message failed!"});
-    //         } else {
-    //             return NextResponse.json({ message: "Message sent!"});
-    //         }
-    //     }
-    // )
+    // Verify CAPTCHA    
+    const captchaResponse = await fetch(`${config.captcha}?key=${process.env.CAPTCHA_API_KEY}`, {
+        method: 'POST',
+        body: JSON.stringify({
+            "event": {
+              "token": `${token}`,
+              "expectedAction": "submit",
+              "siteKey": `${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`,
+            }
+        })
+    });
+
+    const captchaPayload = await captchaResponse.json();
+ 
+    if (captchaPayload.success) {
+        const response = await sendEmail(contactFormData)
+        return NextResponse.json(response);
+    } else {
+        return NextResponse.json({ success: false, message: $t.contact.captchaFailed});
+    }
 }

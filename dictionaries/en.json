@@ -78,8 +78,12 @@
             "description": ""
         },
         "button": {
-            "label": "Submit"
-        }
+            "label": "Submit",
+            "pastAttemptThreshold": "Take a break."
+        },
+        "successMessage": "Message sent successfully.",
+        "failureMessage": "Message could not be sent.",
+        "captchaFailed": "Message could not be sent. Captcha failed."   
     },
     "footer": {
         "copyright": "Jeremiah D. Gage. All Rights Reserved."

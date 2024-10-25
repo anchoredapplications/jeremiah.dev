@@ -11,3 +11,8 @@ export const ContactFormSchema = z.object({
 })
 
 export type ContactFormSchemaType = z.infer<typeof ContactFormSchema>;
+
+export interface ContactFormResponse {
+    success: boolean,
+    message: string,
+}

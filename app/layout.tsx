@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider"
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "jeremiah.dev",
-  description: "Jeremiah \"J\" Gage Portfolio, Works, SKills, Achievements.",
+  description: "Jeremiah \"J\" Gage Portfolio, Works, Skills, Achievements.",
 };
  
 export default function RootLayout({ children }:  Readonly<{
@@ -17,14 +18,16 @@ export default function RootLayout({ children }:  Readonly<{
       <html lang="en" suppressHydrationWarning>
         <head />
         <body>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          <ReCaptchaProvider useEnterprise>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </ReCaptchaProvider>
         </body>
       </html>
   )
