@@ -24,12 +24,10 @@ export async function POST(request: NextRequest) {
 
     const captchaPayload = await captchaResponse.json();
 
-    if (captchaPayload.success) {
+    if (captchaPayload?.tokenProperties?.valid) {
         const response = await sendEmail(contactFormData)
-        console.log(captchaPayload)
         return NextResponse.json(response);
     } else {
-        console.error(captchaPayload)
         return NextResponse.json({ success: false, message: $t.contact.captchaFailed});
     }
 }
