@@ -54,7 +54,7 @@ export function ContactForm() {
           setTimeout(enableButton, 5000 * (2 ** timesUsed));
         }
       }
-    }, [form, enableButton, executeRecaptcha, timesUsed]
+    }, [$t, form, enableButton, executeRecaptcha, timesUsed]
   );
       
   return (
