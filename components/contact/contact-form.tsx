@@ -60,7 +60,7 @@ export function ContactForm() {
                 setTimesUsed(value => value+1)
                 setTimeout(enableButton, 5000*(2^timesUsed))
             }       
-        }, [form, executeRecaptcha, setResponseMessage, setTimeout, timesUsed, setTimesUsed],
+        }, [form, enableButton, executeRecaptcha, setResponseMessage, setTimeout, timesUsed, setTimesUsed],
     );
     
     type ContactFormFieldProps = {
