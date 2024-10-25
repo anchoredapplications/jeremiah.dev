@@ -73,10 +73,10 @@ const TypeHeading: FC<ThemeToggleProps> = ({className, stack, end}: ThemeToggleP
 
     const typeHeading = useMemo(() => (
         <span className={`font-serif ${className}`}>
-            <h1 className={`text-4xl`}>
+            <h1 className={`text-3xl md:text-4xl`}>
                 {sharedText}{heading}
             </h1>
-            <h1 className={`text-6xl`}>
+            <h1 className={`text-4xl md:text-6xl`}>
                 {title}
             </h1>
         </span>
