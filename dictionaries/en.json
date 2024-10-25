@@ -88,7 +88,12 @@
         "tooManyRequests": "Too many requests. Try again later."    
     },
     "footer": {
-        "copyright": "Jeremiah D. Gage. All Rights Reserved."
+        "copyright": "Jeremiah D. Gage. All Rights Reserved.",
+        "captcha": {
+            "url": "https://www.google.com/recaptcha",
+            "label": "This site uses",
+            "captcha": "CAPTCHA."
+        }
     },
     "links": {
         "linkedIn" : "https://www.linkedin.com/in/jeremiah-gage/",

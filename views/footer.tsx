@@ -8,7 +8,10 @@ export default function Footer() {
 
   return (
     <PageSection id="footer" variant={PageSectionVariant.Footer}>
-      <p className='font-extralight text-sm'>&copy; {currentYear} {$t.footer.copyright}</p>
+      <p className='p-2 font-thin tracking-tight text-sm flex gap-1 items-center justify-center w-full dark:text-muted-foreground'>
+        &copy; {currentYear} {$t.footer.copyright} {$t.footer.captcha.label}
+        <a href={$t.footer.captcha.url} target="_blank" rel="noopener noreferrer" className='underline'>{$t.footer.captcha.captcha}</a>
+      </p>
     </PageSection>
   );
 }

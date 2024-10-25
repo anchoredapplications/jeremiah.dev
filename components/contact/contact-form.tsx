@@ -8,7 +8,7 @@ import config from "@/config.json";
 import { useCallback, useState } from "react";
 import { useReCaptcha } from "next-recaptcha-v3";
 import { cn } from "@/lib/utils";
-import ContactFormField from "./conact-form-field";
+import ContactFormField from "./contact-form-field";
 
 export function ContactForm() {
   const [timesUsed, setTimesUsed] = useState<number>(-1);

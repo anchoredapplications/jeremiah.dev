@@ -1,5 +1,5 @@
 "use client";
-import { memo } from "react";
+import { FC, memo } from "react";
 import {
   FormField,
   FormControl,
@@ -20,7 +20,7 @@ type ContactFormFieldProps = {
   placeholder: string;
 };
 
-const ContactFormField: React.FC<ContactFormFieldProps> = memo(({ type, name, label, description, placeholder }) => {
+const ContactFormField: FC<ContactFormFieldProps> = ({ type, name, label, description, placeholder }) => {
   const { control } = useFormContext();
 
   return (
@@ -42,6 +42,6 @@ const ContactFormField: React.FC<ContactFormFieldProps> = memo(({ type, name, la
       )}
     />
   );
-});
+};
 
-export default ContactFormField;
+export default memo(ContactFormField);
