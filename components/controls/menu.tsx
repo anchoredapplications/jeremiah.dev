@@ -50,12 +50,10 @@ const Menu: FC<MenuProps> = () => {
             </SheetClose>
         )
         const toggleOption = ({id, heading}: {id: string, heading: string}) => {return baseOption({ href: `/#${id}`, scroll:true}, id, heading)}
-        const devThemeOption = () => baseOption({ href:'/#', onClick: () => {setTheme(theme === $t.theme.keys.dev ? $t.theme.keys.dark : $t.theme.keys.dev)}, scroll:true}, "", "dev") //zxzxzx
     
         return (
             <nav className="flex flex-col gap-4 m-4 pt-4 border-t-2 dark:border-t">
                 <>{ $t.navigation.map(toggleOption) }</>
-                <>{ devThemeOption() }</>
             </nav>
         )
     }, [$t, setTheme, theme, togglePressed])
