@@ -15,7 +15,7 @@ interface TimelineItem {
 
 const TimelineItem: FC<TimelineItem> = ({event, firstItem, lastItem}: TimelineItem) => {
     const component = useMemo(() => (
-        <li className="w-full h-full flex flex-col items-center gap-4 p-8">
+        <div className="w-full h-full flex flex-col items-center gap-4 p-8">
             <div className="w-full h-full shadow-xl bg-card p-4 rounded-xl m-4 flex flex-col justify-between">
                 <div className="flex flex-col">
                     <span className="flex justify-between w-full items-center">
@@ -34,7 +34,7 @@ const TimelineItem: FC<TimelineItem> = ({event, firstItem, lastItem}: TimelineIt
                     <HoverBadgeList badges={event.skills}/>
                 </div>
             </div>
-        </li>
+        </div>
     ), [event])
 
     return component

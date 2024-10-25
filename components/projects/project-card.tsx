@@ -8,7 +8,7 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import ProjectAvatar from "./project-avatar";
-import HoverBadgeList from "../shared/hover-badge-list";
+import BadgeList from "../shared/badge-list";
 
 interface ProjectCardProps {
     project: Project;
@@ -33,7 +33,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, handleClick }: ProjectCard
                     </div>
                 </CardTitle>
                 <CardDescription>{project.description}</CardDescription>
-                <HoverBadgeList badges={badges}/>
+                <BadgeList badges={badges}/>
             </CardHeader>
             <CardFooter />
         </Card>

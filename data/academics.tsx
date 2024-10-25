@@ -39,7 +39,7 @@ export const academics = {
             </p>      
         </div>)
     }],
-    description: (<li>Received a liberal arts degree. Has proficiency in the arts, including expressing oneself orally and through composition.</li>),
+    description: (<span>Received a liberal arts degree. Has proficiency in the arts, including expressing oneself orally and through composition.</span>),
     institution: "College of the Ozarks",
     location: "Point Lookout, Missouri",
     startDate: new Date(2015, 8),

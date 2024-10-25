@@ -28,12 +28,12 @@ const ContactFormField: FC<ContactFormFieldProps> = ({ type, name, label, descri
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className="w-full md:w-1/2">
+        <FormItem  className="w-full md:w-1/2">
           <FormLabel>{label}</FormLabel>
           <FormControl>
             {type === "textarea" 
               ? <Textarea placeholder={placeholder} {...field} />
-              : <Input type={type} placeholder={placeholder} {...field} />
+              : <Input autoComplete={field.name} type={type} placeholder={placeholder} {...field} />
             }
           </FormControl>
           <FormDescription>{description}</FormDescription>

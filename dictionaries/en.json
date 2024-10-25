@@ -12,8 +12,8 @@
         "description":"Links to all sections of the site."
     },
     "controls": {
-        "linkedIn": "View LinkedIn Profile (new tab)",
-        "resume": "View Resume (new tab)"
+        "linkedIn": "View LinkedIn Profile",
+        "resume": "View Resume"
     },
     "navigation": [
         {"id": "home", "heading":"home"},

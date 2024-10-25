@@ -40,11 +40,11 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
                     <InfoIcon onClick={togglePressed} className="cursor-pointer hover:text-muted-foreground"/>
                 </ClickTooltip>
             </div>
-            <div className="w-full flex gap-2">
+            <div className="w-full flex">
                 <div className="max-h-page-content w-full flex flex-col lg:min-w-dashboard-pane lg:max-w-dashboard-pane">
                     <ProjectCardList projects={projects} handleClick={selectProject} />
                 </div>
-                <div className="hidden flex-col lg:w-full lg:flex xl:flex-row">
+                <div className="hidden m-4 flex-col lg:w-full lg:flex xl:flex-row">
                     <div className="max-h-dashboard-content h-full w-full xl:h-full">
                         <ProjectDisplay project={selectedProject}/>
                     </div>
