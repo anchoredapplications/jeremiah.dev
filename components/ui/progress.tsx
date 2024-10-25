@@ -19,10 +19,11 @@ const CircularProgress = React.forwardRef<
     subtitle: string;
     className?: string;
     strokeWidth?: number;
-    size?: 'normal' | 'lg' | 'xl'; // Size prop
+    size?: 'sm'| 'normal' | 'lg' | 'xl'; // Size prop
   }
 >(({ value, subtitle, className, strokeWidth = 16, size = 'normal', ...props }, ref) => {
   const sizes = {
+    sm: 120,
     normal: 130,
     lg: 150,
     xl: 170
@@ -47,8 +48,8 @@ const CircularProgress = React.forwardRef<
       style={{ width: circleSize, height: circleSize }} // Fixed size
     >
       <span className="absolute flex flex-col w-full h-full justify-center items-center font-mono tracking-tight">
-        <h1 className="text-2xl md:text-xl">{validValue}%</h1>
-        <h2 className="text-md md:text-sm">{subtitle}</h2>
+        <h1 className="text-lg md:text-xl">{validValue}%</h1>
+        <h2 className="text-xs md:text-sm">{subtitle}</h2>
       </span>
       <svg width="100%" height="100%">
         <circle

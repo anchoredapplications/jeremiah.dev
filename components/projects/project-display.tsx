@@ -2,10 +2,9 @@ import { getDictionary } from "@/dictionaries";
 import { Project } from "@/types/project";
 import { memo, useMemo, FC, useState, useCallback, useEffect } from "react"
 import { Skeleton } from "../ui/skeleton";
-import { twMerge } from "tailwind-merge";
 import { Drawer, DrawerContent, DrawerDescription, DrawerTitle } from "../ui/drawer";
-import { Button } from "../ui/button";
 import ProjectDrawerButton from "./project-drawer-button";
+import { cn } from "@/lib/utils";
 
 interface ProjectDisplayProps {
     skeleton?: boolean;
@@ -31,7 +30,7 @@ const ProjectDisplay: FC<ProjectDisplayProps> = ({ project }: ProjectDisplayProp
     }, [project]);
 
     const frame = useMemo(() => (                    
-        <iframe onLoad={handleLoadFrame} src={project?.demo?.href} className={twMerge("w-full h-full rounded-md", frameIsLoading && "hidden")}/>
+        <iframe onLoad={handleLoadFrame} src={project?.demo?.href} className={cn("w-full h-full p-4 rounded-md", frameIsLoading && "hidden")}/>
     ), [project, handleLoadFrame, frameIsLoading]);
 
     const overlay = useMemo(() => isDemoOpen 
@@ -56,7 +55,7 @@ const ProjectDisplay: FC<ProjectDisplayProps> = ({ project }: ProjectDisplayProp
             )
         } else if (project?.demo) { 
             return (
-                <div className="relative w-full h-64 rounded-md shadow-inner lg:h-full">
+                <div className="relative w-full  rounded-md shadow-inner sm-short:h-40 sm-tall:h-64 lg:h-full">
                     { overlay }
                     { frameIsLoading && (<Skeleton className="w-full h-full rounded-md" />) }
                     { frame }

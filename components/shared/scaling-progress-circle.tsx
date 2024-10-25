@@ -17,9 +17,10 @@ interface ScalingProgressCircleProps {
 }
 
 const ScalingProgressCircle: FC<ScalingProgressCircleProps> = ({ value, subtitle }: ScalingProgressCircleProps) => {  
-    const isSmall = useMediaQuery({ query: getQuery({ minWidth: AspectRatio.MIN, maxWidth: AspectRatio.LG})})
+    const isSmall = useMediaQuery({ query: getQuery({ minWidth: AspectRatio.MIN, maxWidth: AspectRatio.MD})})
+    const isTabletOrLargePhone = useMediaQuery({ query: getQuery({ minWidth: AspectRatio.SM, maxWidth: AspectRatio.LG})})
 
-    const size = isSmall ? "lg" : "normal"
+    const size = isSmall ? 'sm' : isTabletOrLargePhone ? "lg" : "normal"
 
     const component = useMemo(() => (
         <CircularProgress  

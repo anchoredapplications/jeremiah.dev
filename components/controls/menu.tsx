@@ -56,7 +56,7 @@ const Menu: FC<MenuProps> = () => {
                 <>{ $t.navigation.map(toggleOption) }</>
             </nav>
         )
-    }, [$t, setTheme, theme, togglePressed])
+    }, [$t, togglePressed])
 
     // Memoized component
     const menu = useMemo(() => (

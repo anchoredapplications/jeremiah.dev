@@ -14,11 +14,12 @@ const config = {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
     },
     extend: {
+      screens: {
+        'sm-tall': { 'raw': '(min-height: 700px) and (max-width: 640px)' },
+        'sm-short': { 'raw': '(max-height: 699px) and (max-width: 640px)' },
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

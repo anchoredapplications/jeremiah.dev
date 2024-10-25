@@ -25,7 +25,7 @@ const ProjectDrawer: FC<ProjectDrawerProps> = ({ openState, children, setIsOpen 
         <Drawer open={openState} onOpenChange={setIsOpen}>
             <DrawerTitle className="sr-only">{$t.projects.heading}</DrawerTitle>
             <DrawerDescription className="sr-only">{$t.projects.description}</DrawerDescription>
-            <DrawerContent className="h-full p-4 md:h-3/4">
+            <DrawerContent className="min-h-full md:h-3/4">
                 {children}
                 <ProjectDrawerButton handleClick={handleClose}>{$t.projects.closeDemo}</ProjectDrawerButton>
             </DrawerContent>

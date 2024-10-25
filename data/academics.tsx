@@ -28,7 +28,7 @@ export const academics = {
             </div>) 
     },{
         type: "Major",
-        name: "General Mathematics",
+        name: "Mathematics",
         gpa: "3.91",
         description: (<div>
             <p>

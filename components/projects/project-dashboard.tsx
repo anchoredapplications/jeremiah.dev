@@ -44,18 +44,18 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
                 <div className="max-h-page-content w-full flex flex-col lg:min-w-dashboard-pane lg:max-w-dashboard-pane">
                     <ProjectCardList projects={projects} handleClick={selectProject} />
                 </div>
-                <div className="hidden p-4 flex-col gap-4 lg:w-full lg:flex xl:flex-row">
+                <div className="hidden flex-col lg:w-full lg:flex xl:flex-row">
                     <div className="max-h-dashboard-content h-full w-full xl:h-full">
                         <ProjectDisplay project={selectedProject}/>
                     </div>
-                    <div className="w-full h-fit h-1/4 xl:h-full xl:w-dashboard-pane xl:min-w-dashboard-pane">
+                    <div className="w-full h-full px-4 xl:w-dashboard-pane xl:min-w-dashboard-pane">
                         <ProjectContent project={selectedProject} />
                     </div>
                 </div>
             </div>
             <MobileTabletOnly>
                 <ProjectDrawer openState={!!isDrawerOpen} setIsOpen={setIsDrawerOpen}>
-                    <div className="h-dashboard-content w-full flex py-2 gap-4 flex-col">
+                    <div className="w-full flex py-2 gap-4 flex-col">
                         <ProjectDisplay project={selectedProject}/>
                         <ProjectContent project={selectedProject} />
                     </div>
