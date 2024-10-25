@@ -56,7 +56,7 @@ const ProjectDisplay: FC<ProjectDisplayProps> = ({ project }: ProjectDisplayProp
             )
         } else if (project?.demo) { 
             return (
-                <div className="relative w-full h-64 rounded-md shadow-inner border lg:h-full">
+                <div className="relative w-full h-64 rounded-md shadow-inner lg:h-full">
                     { overlay }
                     { frameIsLoading && (<Skeleton className="w-full h-full rounded-md" />) }
                     { frame }

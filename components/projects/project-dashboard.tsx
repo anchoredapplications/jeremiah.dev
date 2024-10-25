@@ -37,7 +37,7 @@ const ProjectDashboard: FC<ProjectDashboardProps> = ({ projects }: ProjectDashbo
         <div className="max-h-page-content w-full flex flex-col overflow-hidden rounded-md bg-dashboard shadow-inner border dark:border-border">
             <div className="min-h-14 p-4 flex flex-row-reverse bg-dashboard-header border-b border-dashboard-header shadow-xl dark:border-border">
                 <ClickTooltip tooltip={$t.projects.info} className="font-serif tracking-tight">
-                    <InfoIcon onClick={togglePressed} className={`cursor-pointer ${isPressed ? "text-neutral-700" : "text-neutral-900"}`}/>
+                    <InfoIcon onClick={togglePressed} className="cursor-pointer hover:text-muted-foreground"/>
                 </ClickTooltip>
             </div>
             <div className="w-full flex gap-2">

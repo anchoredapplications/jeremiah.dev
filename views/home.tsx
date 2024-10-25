@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <PageSection id={$t.home.id} variant={PageSectionVariant.Primary}>
       <PageSectionContent>
-          <TypeHeading stack={$t.home.typeHeading} className="w-full h-full flex flex-col justify-center items-center h-screen"/>
+          <TypeHeading end={$t.home.typeHeadingEnd} stack={$t.home.typeHeading} className="w-full h-full flex flex-col justify-center items-center h-screen"/>
       </PageSectionContent>
     </PageSection>
   );

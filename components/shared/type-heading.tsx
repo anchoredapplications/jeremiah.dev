@@ -3,10 +3,11 @@ import { FC, useEffect, useState, memo, useMemo } from "react";
 
 interface ThemeToggleProps {
     className?: string,
-    stack: string[]
+    stack: string[],
+    end: string,
 }
 
-const TypeHeading: FC<ThemeToggleProps> = ({className, stack}: ThemeToggleProps) => {
+const TypeHeading: FC<ThemeToggleProps> = ({className, stack, end}: ThemeToggleProps) => {
     // the duration in milliseconds
     const duration = 5000;
 
@@ -18,22 +19,23 @@ const TypeHeading: FC<ThemeToggleProps> = ({className, stack}: ThemeToggleProps)
         if (!stack.some(val => {
             return val.substring(0, x) !== stack[0].substring(0, x)
         })) {
-            sharedText = stringToCheck
+            sharedText = stringToCheck.substring(0, stringToCheck.length-1)
         }
     }
     // the stack without the shared string
     const newStack = stack.map(val => val.replace(sharedText, ''));
-    
+    const [title, setTitle] = useState<string>("")
+
     const [heading, setHeading] = useState<string>("")
     const [complete, setComplete] = useState<boolean>(false)
     
-    const typeAhead = (index: number, length: number) => ((index % 2 === 0) || (index === length)) ? "|" : ""
+    const typeAhead = (index: number, length: number) => ((index % 2 === 0) || (index === length - 1)) ? "" : "|"
 
-    const typeWord = (word: string) => {
+    const typeWord = (word: string, action=setHeading) => {
         const wordArray = word.split("");
         wordArray.forEach((character, index) => {
             setTimeout(() => { 
-                setHeading(`${wordArray.slice(0, index+1).join("")}${typeAhead(index, wordArray.length)}`)
+                action(`${wordArray.slice(0, index+1).join("")}${typeAhead(index, wordArray.length)}`)
             }, index * 150)
             
             // When you reach the end of the stack, cease typing. 
@@ -56,22 +58,29 @@ const TypeHeading: FC<ThemeToggleProps> = ({className, stack}: ThemeToggleProps)
         newStack.forEach((sentence, index) => {
             setTimeout(() => { 
                 if (index < newStack.length) typeWord(sentence)
-                if (index < newStack.length - 1) untypeWord(sentence)
+                if (index < newStack.length) untypeWord(sentence)
             }, index * duration)
 
             // When you reach the end of the stack, cease typing. 
             if (index === newStack.length - 1) return setComplete(true)
         })
-
+        setTimeout(() => { 
+            typeWord(end, setTitle)
+        }, newStack.length * duration)
     }
 
     useEffect(typeEffect)
 
     const typeHeading = useMemo(() => (
-        <h1 className={`text-4xl font-serif ${className}`}>
-            {sharedText}{heading}
-        </h1>
-    ), [className, sharedText, heading])
+        <span className={`font-serif ${className}`}>
+            <h1 className={`text-4xl`}>
+                {sharedText}{heading}
+            </h1>
+            <h1 className={`text-6xl`}>
+                {title}
+            </h1>
+        </span>
+    ), [className, sharedText, heading, title])
 
     return typeHeading
 }

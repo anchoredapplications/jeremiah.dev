@@ -25,7 +25,8 @@
     "home": {
         "id": "home",
         "heading":"home",
-        "typeHeading": ["I am a creator", "I am a leader", "I am a software engineer."]
+        "typeHeading": ["I am a creator", "I am a leader", "I am an engineer"],
+        "typeHeadingEnd": "jeremiah.dev"
     },
     "timeline" : {
         "endDateDefault" : "Present"
@@ -45,7 +46,7 @@
         "id": "projects",
         "heading": "projects",
         "description": "A showcase of personal, published projects.",
-        "info": "This dashboard pulls projects from my Github organization via the Github Public API.",
+        "info": "This dashboard seamlessly retrieves projects from my GitHub organization by leveraging the capabilities of the GitHub Public API.",
         "placeholder": "P R O J E C T",
         "viewDemo": "VIEW LIVE DEMO",
         "closeDemo": "Close",
