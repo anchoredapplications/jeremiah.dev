@@ -1,33 +1,47 @@
-import { sendEmail } from '@/server/gateway/email';
-import config from '@/config.json';
+import { sendEmail } from '@/server/gateway/aws-ses';
 import { ContactFormSchemaType } from '@/types/contact';
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server';
 import { getDictionary } from '@/dictionaries';
+import { verifyCaptcha } from '@/server/gateway/google-captcha';
 
-export async function POST(request: NextRequest) { 
+let requestCount = 0; // Global request counter
+let lastResetTime = Date.now(); // Last reset timestamp
+let wasNotified = false; // Determines if the warning email was sent.
+const requestLimit = 50; // Request limit
+const timeWindow = 3600000; // 1 hour in milliseconds
+
+export async function POST(request: NextRequest) {
     const $t = getDictionary();
+    const contactFormData: ContactFormSchemaType = await request.json();
+    const token: string | null = request.headers.get("token");
 
-    const contactFormData: ContactFormSchemaType =  await request.json();
-    const token: string | null  = request.headers.get("token");
+    // Reset counter if the time window has passed
+    if (Date.now() - lastResetTime > timeWindow) {
+        requestCount = 0;
+        lastResetTime = Date.now();
+        wasNotified = false;
+    }
+
+    // Check if the request limit is exceeded
+    if (++requestCount > requestLimit) {
+        if (!wasNotified) {
+            wasNotified = true;
+            await sendEmail({
+                email: "jeremiah.dev",
+                body: `The throttle was reached at: ${new Date().toUTCString()}`,
+                subject: "WARNING: THROTTLE REACHED"
+            });
+        }
+        return NextResponse.json({ success: false, message: $t.contact.tooManyRequests });
+    }
+
+    // Verify CAPTCHA
+    const isValid = await verifyCaptcha(token);
     
-    // Verify CAPTCHA    
-    const captchaResponse = await fetch(`${config.captcha}?key=${process.env.CAPTCHA_API_KEY}`, {
-        method: 'POST',
-        body: JSON.stringify({
-            "event": {
-              "token": `${token}`,
-              "expectedAction": "submit",
-              "siteKey": `${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`,
-            }
-        })
-    });
-
-    const captchaPayload = await captchaResponse.json();
-
-    if (captchaPayload?.tokenProperties?.valid) {
-        const response = await sendEmail(contactFormData)
+    if (isValid) {
+        const response = await sendEmail(contactFormData);
         return NextResponse.json(response);
     } else {
-        return NextResponse.json({ success: false, message: $t.contact.captchaFailed});
+        return NextResponse.json({ success: false, message: $t.contact.captchaFailed });
     }
 }

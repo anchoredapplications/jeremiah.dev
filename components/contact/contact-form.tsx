@@ -73,6 +73,7 @@ export function ContactForm() {
 
     const ContactFormField = ({type, name, label, description, placeholder}: ContactFormFieldProps) => (
         <FormField
+            key={name}
             control={form.control}
             name={name}
             render={({ field }) => (

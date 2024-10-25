@@ -83,7 +83,8 @@
         },
         "successMessage": "Message sent successfully.",
         "failureMessage": "Message could not be sent.",
-        "captchaFailed": "Message could not be sent. Captcha failed."   
+        "captchaFailed": "Message could not be sent. Captcha failed.",
+        "tooManyRequests": "Too many requests. Try again later."    
     },
     "footer": {
         "copyright": "Jeremiah D. Gage. All Rights Reserved."
