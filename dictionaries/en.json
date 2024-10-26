@@ -38,6 +38,7 @@
     "academics": {
         "id": "academics",
         "heading": "academics",
+        "cofo": "https://www.cofo.edu/",
         "focus": {
             "gpaLabel": "GPA: "
         }

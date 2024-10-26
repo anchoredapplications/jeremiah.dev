@@ -9,6 +9,7 @@ import { Academics as AcademicsType } from "@/types/academics";
 import Focus from '@/components/academics/focus';
 import { getAcademicData } from '@/server/getAcademicData';
 import { Separator } from '@/components/ui/separator';
+import { HoverTooltip } from '@/components/shared/hover-tooltip';
 
 async function loadAcademicData() {
   const data = await getAcademicData()
@@ -30,9 +31,11 @@ export default async function Academics() {
               <h2 className='text-2xl lg:text-3xl xl:text-4xl'>
                 {academics.degree}
               </h2>
-              <h3 className='text-xl font-light lg:text-2xl xl:text-3xl'>
-                {academics.institution}
-              </h3>
+              <HoverTooltip tooltip={$t.academics.cofo} className='flex justify-left hover:underline'>
+                <a href={$t.academics.cofo} className='text-xl font-light xl:text-2xl'>
+                  {academics.institution}
+                </a>
+              </HoverTooltip>
             </span>
             <h3 className='text-xl font-light lg:text-2xl xl:text-3xl'>
               {academics.startDate} - {academics.endDate}
