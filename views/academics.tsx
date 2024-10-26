@@ -8,6 +8,7 @@ import { getDictionary } from '@/dictionaries';
 import { Academics as AcademicsType } from "@/types/academics";
 import Focus from '@/components/academics/focus';
 import { getAcademicData } from '@/server/getAcademicData';
+import { Separator } from '@/components/ui/separator';
 
 async function loadAcademicData() {
   const data = await getAcademicData()
@@ -22,9 +23,9 @@ export default async function Academics() {
     <PageSection id={$t.academics.id} variant={PageSectionVariant.Primary} showBorder={true}>
       <PageSectionHeader>{$t.academics.heading}</PageSectionHeader>
       <PageSectionContent>
-        <div className='w-full font-serif flex flex-col p-4 gap-6 lg:w-3/4'>
+        <div className='w-full font-serif flex flex-col items-center justify-center p-4 xl:w-3/4'>
           {/* Degree */}
-          <span className='flex justify-between'>
+          <span className='flex justify-between w-full'>
             <span className='flex flex-col'>
               <h2 className='text-2xl lg:text-3xl xl:text-4xl'>
                 {academics.degree}
@@ -38,13 +39,12 @@ export default async function Academics() {
             </h3>
           </span>
           {/* Focuses */}
-          <div className="flex flex-col text-start md:grid md:grid-cols-2  md:flex-row">
-            <div className="flex border-gray-300 md:pr-2 md:border-r">
-              <Focus focus={academics.focuses[0]}/>
-            </div>
-            <div className="flex md:pl-2">
-              <Focus focus={academics.focuses[1]}/>
-            </div>
+          <div className="flex flex-col text-start gap-2 lg:flex-row">
+              <Focus focus={academics?.focuses?.[0]}/>
+              <Separator orientation='vertical' className='h-80 flex self-center hidden lg:block'/>
+              <Focus focus={academics?.focuses?.[1]}/>
+              <Separator orientation='vertical' className='h-80 flex self-center hidden lg:block'/>
+              <Focus focus={academics?.focuses?.[2]}/>
           </div>
         </div>
         <CommendationList commendations={academics.commendations || []} />

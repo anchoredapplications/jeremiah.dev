@@ -27,6 +27,18 @@ export const academics = {
                 </p>
             </div>) 
     },{
+        type: "Minor",
+        name: "Christian Apologetics",
+        gpa: "3.71",
+        description: (<div>
+            <p>
+                My minor in Christian Apologetics allowed me to engage deeply with philosophical and theological concepts, enhancing my understanding of faith and reason. I studied key arguments for the validity of Christianity, examining historical, ethical, and scientific perspectives.
+            </p>
+            <p>
+                This coursework not only strengthened my ability to articulate and defend my beliefs but also cultivated critical thinking and persuasive communication skills. My experience in this field has enriched my worldview and informed my interactions with ethical perspectives in both personal and professional contexts.
+            </p>
+        </div>)
+    },{
         type: "Major",
         name: "Mathematics",
         gpa: "3.91",
@@ -51,4 +63,5 @@ export const academics = {
         decorations.AssociationForComputingMachinery
     ],
 }
+
 
