@@ -27,8 +27,10 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, handleClick }: ProjectCard
         <Card onClick={onSelect} className="rounded-xl my-4 w-full hover:cursor-pointer hover:shadow-outer">
             <CardHeader>
                 <CardTitle>
-                    <div className="flex items-center justify-between tracking-tight font-mono gap-2">
-                        {project.name}    
+                    <div className="flex max-w-full items-center justify-between tracking-tight font-mono gap-2">
+                        <span className="break-words lg:max-w-48">
+                            {project.name}    
+                        </span>
                         <ProjectAvatar icon={project.icon}/> 
                     </div>
                 </CardTitle>

@@ -48,7 +48,7 @@ const ProjectContent: FC<ProjectContentProps> = ({ project }: ProjectContentProp
                 <h1 className="text-3xl tracking-tight font-serif">{project.name}</h1>
                 { project && link }
             </div>
-            <p className="p-4 lg:p-0">
+            <p className="p-4 lg:px-0 ">
                 {project.description}
             </p>
             <div className="w-full flex flex-col gap-4">

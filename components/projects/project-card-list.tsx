@@ -1,7 +1,7 @@
 import { Project } from "@/types/project";
 import { memo, useMemo, FC } from "react"
 import ProjectCard from "./project-card";
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 
 interface ProjectCardProps {
     projects: Project[];
@@ -11,7 +11,7 @@ interface ProjectCardProps {
 const ProjectCardList: FC<ProjectCardProps> = ({ projects, handleClick}: ProjectCardProps) => {
     // Memoized component
     const content = useMemo(() => (
-        <ScrollArea className="h-full w-full flex flex-col px-4">
+        <ScrollArea className="h-full w-full flex flex-col px-4 pb-8">
             {projects.map((project: Project) => (<ProjectCard key={project.name} handleClick={handleClick} project={project} />))}
         </ScrollArea>
     ), [projects, handleClick]);
