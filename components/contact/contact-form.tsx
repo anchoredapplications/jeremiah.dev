@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getDictionary } from "@/dictionaries";
 import { ContactFormResponse, ContactFormSchema, ContactFormSchemaType } from "@/types/contact";
 import config from "@/config.json";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import ContactFormField from "./contact-form-field";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
@@ -28,6 +28,13 @@ export function ContactForm() {
       body: "",
     },
   });
+
+  let loggedMessage = false;
+  useEffect(()=>{
+    // Note to developers on cookie usage for Google Recaptcha. 
+    if (!loggedMessage) console.log($t.dev)
+    loggedMessage = true
+  }, [$t])
 
   const onSubmit = useCallback(
     async (values: ContactFormSchemaType) => {
