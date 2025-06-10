@@ -13,7 +13,7 @@ const Focus: FC<FocusProps> = ({ focus, isFirst, isLast }: FocusProps) => {
     const $t = getDictionary();
 
     const component = useMemo(() => (
-        <div className={`flex flex-col w-full m-4 ${isFirst ? 'sm:text-right' : ''} ${isLast ? 'sm:text-left': ''}`}>
+        <div className={`flex flex-col w-full m-4 p-2 ${isFirst ? 'sm:text-right' : ''} ${isLast ? 'sm:text-left': ''}`}>
             <h4 className={"flex justify-between py-2 md:flex-col xl:flex-row"}>    
                 <b className="text-lg xl:text-xl"> 
                     {focus.name} 
