@@ -18,7 +18,7 @@ const Focus: FC<FocusProps> = ({ focus, isFirst, isLast }: FocusProps) => {
                 <b className="text-lg xl:text-xl"> 
                     {focus.name} 
                 </b>
-                <span className="text-xl font-light lg:text-lg xl:text-xl">{focus.type} {$t.academics.focus.gpaLabel}{focus.gpa}</span>
+                <span className="text-xl font-light lg:text-lg xl:text-xl">{$t.academics.focus.gpaLabel}{focus.gpa}</span>
             </h4>
             <ComponentOf jsx={focus.description} style="flex flex-col text-lg gap-4 text-xl lg:text-lg xl:text-xl"/>
         </div>
